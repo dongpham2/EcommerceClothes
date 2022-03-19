@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/themes/splide-skyblue.min.css">
+    <link rel="stylesheet" href="/css/bill.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title container">
+        <div class="header__title-content">
+          <a href="main.html"><img src="/images/logo.png" alt="" /></a>
+          <div class="header-search">
+            <input
+              type="text"
+              placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="header-cart">
+            <a href="cart.html" style="color: black"><i class="fa-solid fa-cart-shopping btn-icon"></i></a>
+          </div>
+          <div class="header-icon-buyer">
+            <div class="header-bell">
+              <i class="fa-solid fa-bell btn-icon"></i>
+            </div>
+            <div class="header-user">
+              <div class="header-user-icon">
+                <i class="fa-solid fa-user btn-icon"></i>
+              </div>
+              <div class="form">
+                <a href="profileUser.html" style="color: black">
+                  <div class="com-form info">
+                    Thông tin cá nhân
+                  </div>
+                </a>
+                <a href="/user/login.html" style="color: black">
+                  <div class="com-form logout">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span>Đăng xuất</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- info -->
+    <div class="container bill-container">
+        <div class="bill-col">
+            <div class="bill-products">
+                <div class="bill-name">
+                    Sản phẩm
+                </div>
+                <div class="bill-cost">
+                    Giá
+                </div>
+                <div class="bill-number">
+                    Số lượng
+                </div>
+                <div class="bill-total">
+                    Tổng
+                </div>
+            </div>
+            <div class="bill-products bill-info">
+                <div class="bill-img">
+                    <a href=""><img src="/images/ao1.jpg" alt=""></a>
+                    <div class="bill-name bill-name-product">
+                        <h4>
+                            Áo nam siêu chất lượng
+                        </h4>
+                        <div class="bill-name-color">
+                            Màu sắc:
+                            <select>
+                                <option value="0">Đen</option>
+                                <option value="1">Trắng</option>
+                                <option value="2">Xanh</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="bill-cost bill-cost-product">
+                        ₫ 120.000 
+                    </div>
+                    <div class="bill-number bill-count-product">
+                        <div class="buttons_added">
+                            <input class="minus is-form" type="button" value="-" />
+                            <input
+                              aria-label="quantity"
+                              class="input-qty"
+                              max="1000"
+                              min="1"
+                              name=""
+                              type="number"
+                              value="1"
+                            />
+                            <input class="plus is-form" type="button" value="+" />
+                          </div>
+                    </div>
+                    <div class="bill-total bill-total-product">
+                        ₫ 120.000 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bill-pay">
+           <div class="bill-pay-infor">
+               <h4>Áp dụng mã giảm giá</h4>
+                <input type="text" placeholder="Nhập mã giảm giá"><span>Áp dụng</span>
+            </div>
+            <div class="bill-pay-address">
+                <h4>Địa chỉ giao hàng</h4>
+                <div class="bill-adr">
+                    <span>Nhập địa chỉ giao hàng</span>
+                    <br>
+                    <input type="text" placeholder="k52/8 phan thanh - hai chau - da nang">
+                </div>
+            </div>
+            <div class="bill-pay-type">
+                <h4>Hình thức giao hàng</h4>
+                <div class="bill-type">
+                    <h5>Giáo hàng tiết kiệm</h5>
+                    <input type="checkbox" name=""> Fixed ₫ 25.000 
+                </div>
+                <div class="bill-type">
+                    <h5>Giáo hàng nhanh</h5>
+                    <input type="checkbox"> Fixed ₫ 35.000 
+                </div>
+            </div>
+            <div class="bill-pay-method">
+                <h4>Phương thức thanh toán</h4>
+                <input type="checkbox"> Thanh toán trực tiếp
+                <br>
+                <input type="checkbox"> thanh toán bằng tài khoản ngân hàng
+            </div>
+            <div class="container bill-total-form">
+              <div class="bill-total-bot">
+                <h4>Tổng thanh toán</h4>
+                <span>₫ 25.000</span>
+              </div>
+              <div class="bill-total-ship">
+                <h4>Phí vận chuyển</h4>
+                <span>₫0</span>
+              </div>
+              <div class="bill-total-cost">
+                <h4>Tổng chi phí</h4>
+                <span>₫ 25.000</span>
+              </div>
+              <a href="payment.html"><button>Mua hàng</button></a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+      <div class="layout-cover">
+        <div class="layout">
+            <div class="layout-item">
+                <image src="/images/logo.png" class="logo-img"></image>
+            </div>
+            <div class="layout-item">
+                <h3>SẢN PHẨM</h3>
+                <div class="col-2">
+                  <a href="#" class="ao-1">ÁO</a>
+                  <a href="#">QUẦN</a>
+                  <a href="#">SẢN PHẨM MỚI</a>
+                  <a href="#">GIÀY</a>
+                  <a href="#">PHỤ KIỆN</a>
+                </div>
+                
+            </div>
+            <div class="layout-item">
+                <h3>MENU</h3>
+                <div class="col-3">
+                  <a href="#">THÔNG TIN</a>
+                  <a href="#">LIÊN HỆ</a>
+                  <a href="#">TÀI KHOẢN CỦA TÔI</a>
+                  <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
+                  <a href="#">ĐĂNG NHẬP</a>
+              </div>
+            </div>
+            <div class="layout-item">
+                <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+                <div class="col-4">
+                  <h4>ĐỊA CHỈ</h4>
+                  <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+                  <h4>ĐIỆN THOẠI</h4>
+                  <span>0123456789</span>
+                  <h4>EMAIL</h4>
+                  <span>DONGPHAM21082001@GMAIL.COM</span>
+                  <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+                  <span>TỪ T2-CN/7:00AM - 8:00PM</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </footer>
+    <!-- footer -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascript/main.js"></script>
+
+    <script src="/javascript/bill.js"></script>
+  </body>
+</html>

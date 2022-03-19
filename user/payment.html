@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/themes/splide-skyblue.min.css">
+    <link rel="stylesheet" href="/css/payment.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title container">
+        <div class="header__title-content">
+          <a href="main.html"><img src="/images/logo.png" alt="" /></a>
+          <div class="header-search">
+            <input
+              type="text"
+              placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="header-cart">
+            <a href="cart.html" style="color: black"><i class="fa-solid fa-cart-shopping btn-icon"></i></a>
+          </div>
+          <div class="header-icon-buyer">
+            <div class="header-bell">
+              <i class="fa-solid fa-bell btn-icon"></i>
+            </div>
+            <div class="header-user">
+              <div class="header-user-icon">
+                <i class="fa-solid fa-user btn-icon"></i>
+              </div>
+              <div class="form">
+                <a href="profileUser.html" style="color: black">
+                  <div class="com-form info">
+                    Thông tin cá nhân
+                  </div>
+                </a>
+                <a href="/user/login.html" style="color: black">
+                  <div class="com-form logout">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span>Đăng xuất</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- content -->
+    <div class="container delivery">
+        <div class="delivery-container">
+            <div class="speed speed-1">
+              <h5>1</h5>
+              <div class="icon">
+                <ion-icon name="checkmark-outline"></ion-icon>
+              </div>
+                <div class="speed-content-1">
+                    <h4>Giao Hàng</h4>
+                </div>
+            </div>
+            <div class="speed speed-2">
+                <h5>2</h5>
+                <div class="icon">
+                  <ion-icon name="checkmark-outline"></ion-icon>
+                </div>
+                <div class="speed-content-2">
+                    <h4>Thanh Toán</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container delivery-detail">
+      <div class="detail-payment">
+        <div class="detail-pay">
+          <h4>Phương thức thanh toán:</h4>
+        </div>
+        <div class="detail-info">
+          Thông tin giao hàng
+        </div>
+        <div class="detail detail-check">
+          <ion-icon name="checkbox-outline"></ion-icon>
+          <span>Thanh toán trực tiếp</span>
+        </div>
+        <div class="detail detail-address">
+          <h4 class="detail-1">Phạm Văn Đông</h4>
+          <h4 class="detail-2">K52/2 Phan Thanh - Hải Châu - Đà Nẵng</h4>
+          <h4 class="detail-3">+1234565789</h4>
+        </div>
+      </div>
+      <!-- form -->
+      <div class="detail-form">
+        <div class="detail-form-header">
+          <h4>Tóm tắt đơn hàng</h4>
+        </div>
+        <div class="detail-bill">
+           <div class="detail-cost">
+            <h4>Tổng tiền</h4>
+            <span>₫ 150.000</span>
+           </div>
+           <div class="detail-cost">
+            <h4>Phí giao hàng</h4>
+            <span>₫ 20.000</span>
+           </div>
+           <div class="detail-cost detail-cost-end">
+            <h4>Mã giảm giá</h4>
+            <span>- ₫10.000</span>
+           </div>
+        </div>
+        <div class="detail-total">
+          <h4>Tổng đơn Hàng</h4>
+          <span>₫ 120.000</span>
+        </div>
+        <div class="detail-items">
+          <div class="detail-item">
+            <img src="/images/ao1.jpg" alt="">
+            <div class="detail-item-content">
+              <div class="item detail-item-name">
+                Áo nam siêu đ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="detail-item-price">
+                ₫ 120.000
+              </div>
+              <div class="item detail-item-size">
+                Size : M
+              </div>
+              <div class="item detail-item-color">
+                Màu: đen
+              </div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <img src="/images/ao1.jpg" alt="">
+            <div class="detail-item-content">
+              <div class="item detail-item-name">
+                Áo nam siêu đ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="detail-item-price">
+                ₫ 120.000
+              </div>
+              <div class="item detail-item-size">
+                Size : M
+              </div>
+              <div class="item detail-item-color">
+                Màu: đen
+              </div>
+            </div>
+          </div>
+          <div class="detail-item">
+            <img src="/images/ao1.jpg" alt="">
+            <div class="detail-item-content">
+              <div class="item detail-item-name">
+                Áo nam siêu đ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="detail-item-price">
+                ₫ 120.000
+              </div>
+              <div class="item detail-item-size">
+                Size : M
+              </div>
+              <div class="item detail-item-color">
+                Màu: đen
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+  <footer id="footer">
+    <div class="layout-cover">
+      <div class="layout">
+          <div class="layout-item">
+              <image src="/images/logo.png" class="logo-img"></image>
+          </div>
+          <div class="layout-item">
+              <h3>SẢN PHẨM</h3>
+              <div class="col-2">
+                <a href="#" class="ao-1">ÁO</a>
+                <a href="#">QUẦN</a>
+                <a href="#">SẢN PHẨM MỚI</a>
+                <a href="#">GIÀY</a>
+                <a href="#">PHỤ KIỆN</a>
+              </div>
+              
+          </div>
+          <div class="layout-item">
+              <h3>MENU</h3>
+              <div class="col-3">
+                <a href="#">THÔNG TIN</a>
+                <a href="#">LIÊN HỆ</a>
+                <a href="#">TÀI KHOẢN CỦA TÔI</a>
+                <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
+                <a href="#">ĐĂNG NHẬP</a>
+            </div>
+          </div>
+          <div class="layout-item">
+              <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+              <div class="col-4">
+                <h4>ĐỊA CHỈ</h4>
+                <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+                <h4>ĐIỆN THOẠI</h4>
+                <span>0123456789</span>
+                <h4>EMAIL</h4>
+                <span>DONGPHAM21082001@GMAIL.COM</span>
+                <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+                <span>TỪ T2-CN/7:00AM - 8:00PM</span>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</footer>
+    <script src="/javascript/main.js"></script>
+  </body>
+</html>

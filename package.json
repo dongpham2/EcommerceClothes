@@ -1,0 +1,29 @@
+{
+  "name": "ecomerceclothes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "json-server-auth --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongpham2/SIG.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongpham2/SIG/issues"
+  },
+  "homepage": "https://github.com/dongpham2/SIG#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
+    "mongodb": "^4.3.1"
+  }
+}

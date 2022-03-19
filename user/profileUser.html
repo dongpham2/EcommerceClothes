@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profileUser.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+</head>
+<body>
+  
+    <header class="header">
+        <div class="header__title container">
+          <div class="header__title-content">
+            <a href="main.html"><img src="/images/logo.png" alt="" /></a>
+            <div class="header-search">
+              <input
+                type="text"
+                placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header-icon-buyer">
+              <div class="header-bell">
+                <i class="fa-solid fa-bell btn-icon"></i>
+              </div>
+              <div class="header-user">
+                <div class="header-user-icon">
+                  <i class="fa-solid fa-user btn-icon"></i>
+                </div>
+                <div class="form">
+                  <div class="com-form logout">
+                    <div class="logout-icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </div>
+                    <span style="margin-top: 3px;
+                    margin-left: 9px;">Đăng xuất</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container nav__container">
+          <div class="nav-content">
+              <h4>Shop</h4>
+              <div class="shop nav-profile active">
+                <ion-icon name="image-outline"></ion-icon>
+                Hồ sơ của tôi
+              </div>
+              <div class="shop nav-vocher">
+                <ion-icon name="ticket-outline"></ion-icon>
+                Kho vocher
+              </div>
+              <div class="shop nav-order">
+                <ion-icon name="reorder-four-outline"></ion-icon>
+                Đơn đã mua
+              </div>
+              <div class="nav-setting">
+                  <h4>cài đặt</h4>
+                  <div class="shop nav-private">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    Cài đặt riêng tư
+                  </div>
+                  <div class="shop nav-chat">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    Cài đặt chat    
+                  </div>
+                  <div class="shop nav-notify">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    Cài đặt thông báo
+                  </div>
+              </div>
+          </div>
+          <div class="nav-information">
+            <div class="inf nav-name">
+              <div class="fl0 nav-title-name">
+                Tên người nhận:
+              </div>
+              <div class="fl1 nav-detail-name">
+                winter
+              </div>
+
+            </div>
+            <div class="inf nav-address">
+              <div class="fl0 nav-title-address">
+                Địa chỉ nhận hàng:
+              </div>
+              <div class="fl1 nav-detail-address">
+                385 Lê Duẩn - Q.Hải Châu - Đà Nẵng
+              </div>
+            </div>
+            <div class="inf nav-phone">
+              <div class="fl0 nav-title-phone">
+                Số điện thoại:
+              </div>
+              <div class="fl1 nav-detail-phone">
+                0853390932
+              </div>
+            </div>
+            <div class="inf nav-email">
+              <div class="fl0 nav-title-email">
+                Địa chỉ email:
+              </div>
+              <div class="fl1 nav-detail-email">
+                qwewqe@gmail.com
+              </div>
+            </div>
+            <div class="inf nav-bank">
+                <div class="fl0 bank-name">
+                    Ngân hàng liên kết:
+                </div>
+                <div class="fl1 bank-number">
+                    1245786156145
+                </div>
+                <a href="">Thay đổi</a>
+            </div>
+            <button class="change">Thay đổi</button>
+          </div>
+      </div>
+      </div>
+      <div class="overlay" id="overlay">
+        <ion-icon name="close-outline" class="close"></ion-icon>
+        <div class="container nav-detail-profile">
+          <form action="" method="post">
+            <label for="username">Tên người dùng:</label>
+            <input type="text" name="username" id="username">
+            <br>
+            <label for="address">Địa chỉ giao hàng:</label>
+            <input type="text" name="address" id="address">
+            <br>
+            <label for="email">Địa chỉ email:</label>
+            <input type="text" name="email" id="email">
+            <br>
+            <label for="phone">Số điện thoại:</label>
+            <input type="text" name="phone" id="phone">
+            <div class="save">
+              Lưu
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- <script src="/javascript/main.js"></script> -->
+      <script src="/javascript/profileUser.js"></script>
+      <!-- <script src="/javascript/main.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Product Detail</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title container">
+        <div class="header__title-content">
+          <a href="homePage.html"><img src="/images/logo.png" alt="" /></a>
+          <div class="header-search">
+            <input
+              type="text"
+              placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="header-cart">
+            <a href="cart.html" style="color: black;"><i class="fa-solid fa-cart-shopping btn-icon"></i></a>
+          </div>
+          <div class="header-icon-buyer">
+            <div class="header-bell">
+              <i class="fa-solid fa-bell btn-icon"></i>
+            </div>
+            <div class="header-user">
+              <div class="header-user-icon">
+                <i class="fa-solid fa-user btn-icon"></i>
+              </div>
+              <div class="form">
+                <a href="profileUser.html" style="color: black">
+                  <div class="com-form info">
+                    Thông tin cá nhân
+                  </div>
+                </a>
+                <div class="com-form logout">
+                  <ion-icon name="log-out-outline" ></ion-icon>
+                  <span>Đăng xuất</span>
+                </div>
+              </div>
+            </div>
+            <div class="header-log" >
+              <h2 class="header-1">Đăng nhập</h2>
+              <h2>Đăng kí</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- content product detail -->
+    <div class="content__product container">
+      <div class="content__container-top">
+        <div class="content-left">
+          <img src="/images/ao1.jpg" alt="" id="main-img" />
+          <div class="content-img-child">
+            <img class="img1" src="/images/logo.png" onclick="changeImage('one')" id="one" />
+            <img class="img2" src="/images/ao1.jpg" onclick="changeImage('two')" id="two" />
+            <img class="img3" src="/images/ao1.jpg"  onclick="changeImage('three')" id="three" />
+            <img class="img4" src="/images/ao1.jpg" onclick="changeImage('four')" id="four" />
+          </div>
+        </div>
+        <div class="content-right">
+          <div class="content-name">
+            <h2>Áo thun nam siêu đẹp tuyệt vời con gà tây</h2>
+            <div class="content-name-star">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <div class="content-name-review">20 Đánh giá</div>
+              <div class="content-name-review">30 Đã bán</div>
+            </div>
+            <div class="content-name-price">
+              <div class="content-price">₫80.000 - ₫180.000</div>
+            </div>
+            <div class="content-title content-name-code">
+              <h4>Mã giảm giá</h4>
+              <div class="content-code">Giảm 10k</div>
+            </div>
+            <div class="content-title content-name-ship">
+              <h4>Vận chuyển</h4>
+              <div class="content-ship">
+                <i class="fa-solid fa-truck"></i><span>Vận chuyển tới</span>
+                <select name="country_VN"></select>
+              </div>
+            </div>
+            <div class="content-title content-name-color">
+              <h4>Màu sắc</h4>
+              <div class="content-button-color">
+                <button class="btn-1">Đen</button>
+                <button class="btn-2">Trắng</button>
+              </div>
+            </div>
+            <div class="content-title content-name-size">
+              <h4>Kích cỡ</h4>
+              <div class="content-size">
+                <button>S(29-40kg)</button>
+                <button>M(40-52kg)</button>
+                <button>L(53-60kg)</button>
+                <button>XL(61-72kg)</button>
+                <button>XXL(Trên 73kg)</button>
+              </div>
+            </div>
+            <div class="content-title content-name-number">
+              <h4>Số lượng</h4>
+              <div class="buttons_added">
+                <input class="minus is-form" type="button" value="-" />
+                <input
+                  aria-label="quantity"
+                  class="input-qty"
+                  max="1000"
+                  min="1"
+                  name=""
+                  type="number"
+                  value="1"
+                />
+                <input class="plus is-form" type="button" value="+" />
+              </div>
+            </div>
+            <div class="content-name-cart">
+              <a href="login.html">
+                <button class="btn">
+                  <i class="fa-solid fa-cart-plus"></i
+                  ><span>Thêm vào giỏ hàng</span>
+                </button>
+              </a>
+              <a href="login.html"><button class="btn-sed">Mua ngay</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content__container-bottom">
+        <div class="container content__review">
+          <div class="content-info">
+            <div class="content-name">
+              Mổ tả sản phẩm 
+            </div>
+            <div class="content-descript">
+              <p>• VÌ SAO BẠN SẼ THÍCH?
+                Son lì mịn môi cao cấp Ultimate cho bạn 3 tính năng vượt trội
+                Mịn.
+                Mờ. 
+                Nhẹ tênh 
+                Với công nghệ làm mờ rãnh môi mang đến lớp finish mịn mờ sang trọng kết hợp công nghệ ultrafine powder cho son mịn lì nhẹ tênh. 
+                Thiết kế đầu son hình giọt sương nhỏ giúp son dễ dàng lướt nhẹ và chuẩn màu trên môi bạn. Đặc biệt, vỏ son “mảnh mai thon gọn” cùng màu sắc bắt mắt, khơi gợi hơi thở sang trọng, thời thượng và trẻ trung.
+                Bảng màu:
+                199 - More Ruby: Đỏ hồng
+                299 - More Scarlet: Đỏ thuần
+                399 - More Magenta: Hồng đào
+                499 - More Blush: Hồng đất
+                799 - More Taupe: Cam ngả đất
+                899 - More Rust: Đỏ gạch
+                1299 - More Spice: Đỏ đất
+                • ƯU ĐIỂM NỔI BẬT
+                - Chất son mềm, mượt, mịn, tạo hiệu ứng mờ không để lộ vân môi
+                - Không gây cảm giác khó chịu, không gây nứt môi
+                - Lên màu chuẩn, độ bền màu cao
+                - Tạo hiệu ứng mịn lì không tì vết
+                • HIỆU QUẢ SỬ DỤNG
+                Hiệu ứng mịn lì - mờ ảo - nhẹ tênh - màu lên chuẩn, chỉ sau 1 lần lướt trên môi. Cùng với các màu son tôn da ngay tức thì mà không cần trang điểm cầu kỳ chuyên nghiệp. Ultimate - cho sắc mặt bạn bừng sáng chỉ sau 1 lần lướt nhẹ son, mang đến thần thái thời thượng &amp; trẻ trung
+                • HƯỚNG DẪN SỬ DỤNG
+                1. Bạn có thể pha màu son để tạo nên sắc son ombre chuyển màu cực kỳ ấn tượng (ví dụ: kết hợp màu More taupe 799 làm lớp nền môi &amp; màu More magenta 399 ở lòng môi để tạo ra tone hồng đất cực kỳ tôn da và thu hút).
+                2. Hoặc sử dụng kết hợp với che khuyết điểm Maybelline Fitme ở viền môi &amp; son ultimate ở lòng môi để tạo hiệu ứng đôi môi chúm chím kiêu kỳ hơn.
+                Xuất xứ thương hiệu: Mỹ 
+                Nơi sản xuất: Trung Quốc 
+                Ngày sản xuất: Xem trên bao bì sản phẩm 
+                Hạn sử dụng: 3 năm kể từ ngày sản xuất.
+                • THÔNG TIN THƯƠNG HIỆU
+                Là thương hiệu trang điểm số 1 thế giới, Maybelline New York chính thức có mặt tại Việt Nam từ năm 2007 và nhanh chóng trở thành thương hiệu trang điểm hàng đầu ở các dòng sản phẩm Mascara, Kem nền, Son kem lì... Sản phẩm của Maybelline luôn ứng dụng công nghệ tiên tiến, dễ sử dụng, dẫn đầu xu hướng Makeup với sự đa dạng về sản phẩm cùng giá thành hợp lý. Maybelline trở thành thương hiệu được yêu thích nhất tại Việt Nam bởi các bạn trẻ thích trang điểm, thích thể hiện chất riêng và dám nghĩ dám làm.
+                *Bắt nguồn từ New York- Mỹ và đã có mặt ở hơn 150 quốc gia, Maybelline sở hữu nhiều nhà máy sản xuất trên toàn thế giới như Trung Quốc, Mỹ, Pháp, Nhật,... Dù được sản xuất ở đâu, các sản phẩm đều tuân thủ quy trình kiểm soát chất lượng nghiêm ngặt của Maybelline toàn cầu. Sản phẩm Maybelline chính hãng tại Việt Nam đều có tem nhãn tiếng Việt phía sau và nhập khẩu trực tiếp từ Công ty TNHH L’Oreal Việt Nam nên các bạn hoàn toàn yên tâm về chất lượng và xuất xứ sản phẩm.
+                #maybelline #ultimate #sonthoi #sonli #nhemoi #nhungmin #minmo #camdat
+                 mẫu mã bao bì thay đổi theo từng đợt nhập hàng</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container content__container-end">
+        <div class="content__review content__container-review">
+          <div class="content-name">
+            ĐÁNH GIÁ SẢN PHẨM
+          </div>
+          <div class="content-tag">
+            <input type="text">
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bound slide-container">
+      <div class="slide-sliders">
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+        <div class="slide-content">
+          <a href=""><img src="/images/ao1.jpg" alt=""></a>
+          <div class="slide-name">
+            <h4>Áo thun nam siêu xinh đẹp</h4>
+          </div>
+          <div class="slide-detail">
+            <div class="slide-detail-price">
+              ₫90.000
+            </div>
+            <div class="slide-detail-sale">
+              Đã bán 20
+            </div>
+          </div>
+        </div>
+       </div>
+       <div class="content__bottom">
+        <div class="content-number">
+          <button><ion-icon name="chevron-back-outline"></ion-icon></button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- footer -->
+  <footer id="footer">
+    <div class="layout-cover">
+      <div class="layout">
+          <div class="layout-item">
+              <image src="/images/logo.png" class="logo-img"></image>
+          </div>
+          <div class="layout-item">
+              <h3>SẢN PHẨM</h3>
+              <div class="col-2">
+                <a href="#" class="ao-1">ÁO</a>
+                <a href="#">QUẦN</a>
+                <a href="#">SẢN PHẨM MỚI</a>
+                <a href="#">GIÀY</a>
+                <a href="#">PHỤ KIỆN</a>
+              </div>
+              
+          </div>
+          <div class="layout-item">
+              <h3>MENU</h3>
+              <div class="col-3">
+                <a href="#">THÔNG TIN</a>
+                <a href="#">LIÊN HỆ</a>
+                <a href="#">TÀI KHOẢN CỦA TÔI</a>
+                <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
+                <a href="#">ĐĂNG NHẬP</a>
+            </div>
+          </div>
+          <div class="layout-item">
+              <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+              <div class="col-4">
+                <h4>ĐỊA CHỈ</h4>
+                <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+                <h4>ĐIỆN THOẠI</h4>
+                <span>0123456789</span>
+                <h4>EMAIL</h4>
+                <span>DONGPHAM21082001@GMAIL.COM</span>
+                <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+                <span>TỪ T2-CN/7:00AM - 8:00PM</span>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/javascript/productDetail.js"></script>
+    <script src="/javascript/main.js"></script>
+  </body>
+</html>

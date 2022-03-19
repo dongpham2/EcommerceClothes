@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$mHzpBhykw8Irgobcfhm4hO74OEeO/WPjgnjNFdyGLFbYUQzBMu5cu",
+      "id": 1
+    },
+    {
+      "email": "dongpha21@gmail.com",
+      "password": "$2a$10$kFgQk8KNRA4M.HgpC/nFiexTRdsdSQAl/7KaMaQOV3FUYS2xvh1nS",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/statis.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__title container">
+          <div class="header__title-content">
+            <a href="main.html"><img src="/images/logo.png" alt="" /></a>
+            <div class="header-search">
+              <input
+                type="text"
+                placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header-icon-buyer">
+              <div class="header-bell">
+                <i class="fa-solid fa-bell btn-icon"></i>
+              </div>
+              <div class="header-user">
+                <div class="header-user-icon">
+                  <i class="fa-solid fa-user btn-icon"></i>
+                </div>
+                <div class="form">
+                  <a href="" style="color: black;"><div class="com-form logout">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span>Đăng xuất</span>
+                  </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container nav__container">
+          <div class="nav-content">
+              <h4>Shop</h4>
+              <a href="seller.html" style="color:black;">
+                <div class="shop nav-profile ">
+                    <ion-icon name="image-outline"></ion-icon>
+                    Hồ sơ Shop
+                  </div>
+              </a>
+              <div class="shop nav-review">
+                <ion-icon name="star-outline"></ion-icon>
+                Đánh giá shop
+              </div>
+              <div class="shop nav-product">
+                <ion-icon name="shirt-outline"></ion-icon>
+                Sản phẩm của shop
+              </div>
+              <div class="shop nav-statis active">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+                Thống kê doanh thu
+              </div>
+              <div class="nav-setting">
+                  <h4>cài đặt</h4>
+                  <div class="shop nav-private">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    Cài đặt riêng tư
+                  </div>
+                  <div class="shop nav-chat">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    Cài đặt chat    
+                  </div>
+                  <div class="shop nav-notify">
+                    <ion-icon name="alert-circle-outline"></ion-icon>
+                    Cài đặt thông báo
+                  </div>
+              </div>
+          </div>
+          <div class="charts">
+                <div class="chart">
+                    <h2>Doanh thu (theo tháng)</h2>
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart doughnut-chart">
+                    <h3 id="">Tổng thu nhập tháng qua:</h3>
+                    <br>
+                    <h3 id="">Số sản phẩm đã bán:</h3>
+                </div>
+          </div>
+          <div class="charts-content">
+            <h4>Doanh thu (theo tuần)</h4>
+          </div>
+      </div>
+      <script src="/javascript/profileUser.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+      <script src="/javascript/statis.js"></script>
+      <!-- <script src="/javascript/seller.js"></script> -->
+      <!-- <script src="/javascript/main.js"></script> -->
+</body>
+</html>

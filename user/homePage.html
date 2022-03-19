@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/themes/splide-skyblue.min.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title container">
+        <div class="header__title-content">
+          <a href="homePage.html"><img src="/images/logo.png" alt="" /></a>
+          <div class="header-search">
+            <input
+              type="text"
+              placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+              name="searchBar"
+              id="searchBar"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="header-cart">
+            <a href="cart.html" style="color: black"><i class="fa-solid fa-cart-shopping btn-icon"></i></a>
+          </div>
+          <div class="header-icon-buyer">
+            <div class="header-bell">
+              <i class="fa-solid fa-bell btn-icon"></i>
+            </div>
+            <div class="header-user">
+              <div class="header-user-icon">
+                <i class="fa-solid fa-user btn-icon"></i>
+              </div>
+              <div class="form">
+                <a href="profileUser.html" style="color: black">
+                  <div class="com-form info">
+                    Thông tin cá nhân
+                  </div>
+                </a>
+                <div class="com-form logout">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  <a href="/user/login.html"><span>Đăng xuất</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="header-log" >
+              <h2 class="header-1">Đăng nhập</h2>
+              <h2>Đăng kí</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      
+    </div>
+
+    <!-- Content -->
+    <div class="content container">
+      <div class="content__left">
+        <input type="radio" name="radio-btn" id="radio1" />
+        <input type="radio" name="radio-btn" id="radio2" />
+        <input type="radio" name="radio-btn" id="radio3" />
+        <input type="radio" name="radio-btn" id="radio4" />
+        <div class="content-slider first">
+          <img src="/images/banner1.jpg" alt="" />
+        </div>
+        <div class="content-slider">
+          <img src="/images/banner2.jpg" alt="" />
+        </div>
+        <div class="content-slider">
+          <img src="/images/banner3.jpg" alt="" />
+        </div>
+        <div class="content-slider">
+          <img src="/images/banner4.jpg" alt="" />
+        </div>
+
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
+        </div>
+      </div>
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
+      <div class="content__right">
+        <div class="content-img-top">
+          <img src="/images/banner5.jpg" alt="" />
+        </div>
+        <div class="content-img-bot">
+          <img src="/images/banner6.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Product -->
+
+    <div class="container">
+      <div class="content__middle">
+        <div class="content-menu">
+          <div class="content-header">
+            <ion-icon name="funnel-outline"></ion-icon>
+            <h3>Bộ lọc tìm kiếm</h3>
+          </div>
+          <div class="content-items">
+            <h4>Theo danh mục</h4>
+            <div class="content-item">
+              <input type="checkbox" id="shirt"/>
+              <div class="content-item-name">Áo</div>
+            </div>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name" id="pant">Quần</div>
+            </div>
+          </div>
+          <div class="content-items">
+            <h4>Nơi bán</h4>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">Hà Nội</div>
+            </div>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">TP. Hồ Chí Minh</div>
+            </div>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">Đà Nẵng</div>
+            </div>
+          </div>
+          <div class="content-items">
+            <h4>Đơn vị vận chuyển</h4>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">Hoả tốc</div>
+            </div>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">Nhanh</div>
+            </div>
+            <div class="content-item">
+              <input type="checkbox" />
+              <div class="content-item-name">Tiết kiệm</div>
+            </div>
+          </div>
+          <div class="content-items content-bot">
+            <h4>Khoảng giá</h4>
+            <div class="content-input">
+              <input type="text" placeholder="đ TỪ" />
+              <div class="content-items-empty"></div>
+              <input type="text" placeholder="đ ĐẾN" />
+            </div>
+          </div>
+          <a href=""><button>ÁP DỤNG</button></a>
+        </div>
+        <!-- product item -->
+        <div class="product__bottom">
+            <!-- render js -->
+          </div>
+          <!-- end product item -->
+        </div>
+      </div>
+      <div class="content__bottom">
+        <div class="content-number" style="display: flex;">
+          <button class="btn-prev btn-active"><ion-icon name="chevron-back-outline" ></ion-icon></button>
+          <div class="content-number-page" >
+            <!-- <button class="btn-number active">1</button>
+            <button class="btn-number">2</button>
+            <button class="btn-number">3</button>
+            <button class="btn-number">4</button> -->
+          </div>
+          <button class="btn-next">
+            <ion-icon name="chevron-forward-outline" ></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="layout-cover">
+      <div class="layout">
+          <div class="layout-item">
+              <image src="/images/logo.png" class="logo-img"></image>
+          </div>
+          <div class="layout-item">
+              <h3>SẢN PHẨM</h3>
+              <div class="col-2">
+                <a href="#" class="ao-1">ÁO</a>
+                <a href="#">QUẦN</a>
+                <a href="#">SẢN PHẨM MỚI</a>
+                <a href="#">GIÀY</a>
+                <a href="#">PHỤ KIỆN</a>
+              </div>
+              
+          </div>
+          <div class="layout-item">
+              <h3>MENU</h3>
+              <div class="col-3">
+                <a href="#">THÔNG TIN</a>
+                <a href="#">LIÊN HỆ</a>
+                <a href="#">TÀI KHOẢN CỦA TÔI</a>
+                <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
+                <a href="#">ĐĂNG NHẬP</a>
+            </div>
+          </div>
+          <div class="layout-item">
+              <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+              <div class="col-4">
+                <h4>ĐỊA CHỈ</h4>
+                <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+                <h4>ĐIỆN THOẠI</h4>
+                <span>0123456789</span>
+                <h4>EMAIL</h4>
+                <span>DONGPHAM21082001@GMAIL.COM</span>
+                <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+                <span>TỪ T2-CN/7:00AM - 8:00PM</span>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+</footer>
+    
+    <script src="/javascript/homePage.js"></script>
+  </body>
+</html>
+
+
+
