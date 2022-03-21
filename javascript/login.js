@@ -1,46 +1,53 @@
 // import { ProducService } from "./services/product";
 
-document.querySelector(".img-btn").addEventListener("click", function () {
-  document.querySelector(".cont").classList.toggle("s-signup");
+document.querySelector('.img-btn').addEventListener('click', function () {
+  document.querySelector('.cont').classList.toggle('s-signup');
 });
-const email = document.querySelector("#email");
-const password = document.querySelector("#password");
-const btn_login = document.querySelector("#btn-login");
-btn_login.addEventListener("click", (e) => {
-  e.preventDefault();
-  const user = {
-    email: email.value,
-    password: password.value,
-  };
-  let success = false;
-  fetch("http://localhost:3000/register", {
-    method: "POST", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  })
-  .then((response) => {
-    if(succes) {
-      success = true;
-      return response.json();
+
+const formLogin = document.querySelector('.sign-in');
+const btn_login = document.querySelector('#btn-login');
+const emailLogin = document.getElementById('login-username');
+const passwordLogin = document.getElementById('login-password');
+
+const formRegister = document.querySelector('.sign-up');
+const btn_register = document.querySelector('#btn-register');
+const usernameRegister = formRegister.querySelector('.username');
+const passwordRegister = formRegister.querySelector('.password');
+const fullNameRegister = formRegister.querySelector('.fullname');
+const confirmPasswordRegister = formRegister.querySelector('.confirm-password');
+const phoneRegister = formRegister.querySelector('.phone');
+
+btn_login.addEventListener('click', async function () {
+  console.log('value', passwordLogin.value);
+  try {
+    const res = await axiosClient.post('/users/signin', {
+      email: emailLogin.value,
+      password: passwordLogin.value,
+    });
+    if (res.success) {
+      window.location.href = './main.html';
     }
-    else {
-      success = false;
-      return ;
-    }
-  })
-  .then((data) => {
-    if (success) {
-      console.log(data);
-      localStorage.setItem("user", JSON.stringify(data));
-      const url = "http://127.0.0.1:5500/user/main.html";
-      // window.location = url;
-    }
-  })
-  .catch((error) => {
+  } catch (error) {
     alert(error.message);
-  });
+  }
 });
 
+btn_register.addEventListener('click', async function () {
+  try {
+    if (
+      passwordRegister.value.trim() !== confirmPasswordRegister.value.trim()
+    ) {
+      alert('Mật khẩu không trùng khớp');
+      return;
+    }
 
+    const res = await axiosClient.post('/users/signup', {
+      fullname: 'admin1232323',
+      username: 'admin121212',
+      sdt: '0913420197',
+      password: 'admin123',
+    });
+  } catch (error) {
+    alert(error.message);
+  }
+});
