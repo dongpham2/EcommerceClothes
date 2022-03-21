@@ -202,7 +202,7 @@ body {
 }
 .nav-content { 
     width: 250px;
-    max-height: 800px;
+    max-height: 250px;
     background-color: #fff;
     padding: 10px;
     cursor: pointer;
@@ -231,22 +231,8 @@ body {
 .nav-address ion-icon {
     color: #EE0000;
 }
-.nav-review ion-icon {
-    color: 	#FFFF00;
-}
 .nav-product ion-icon{
     color: #FF0099;
-}
-.nav-setting {
-    margin-top: 50px;
-    padding: 10px;
-    cursor: pointer;
-}
-.nav-private ion-icon{
-    color: #8B4513;
-}
-.nav-notify ion-icon{
-    color: #990000;
 }
 
 /* nav infomation */
