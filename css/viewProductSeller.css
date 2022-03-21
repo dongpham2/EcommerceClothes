@@ -417,4 +417,4 @@ body::after {
   content: '';
   display: block;
   height: 350px; /* Set same as footer's height */
-}
+} 
