@@ -26,7 +26,7 @@ function removeSize(){
   var child = document.getElementById("subgr-2");
   parent.removeChild(child);
 }
-function removeColor(){
+function removeColor(){ 
   var parent = document.getElementById("gr-1");
   var child0 = document.getElementById("subgr-1-0");
   var child1 = document.getElementById("subgr-1-1");
