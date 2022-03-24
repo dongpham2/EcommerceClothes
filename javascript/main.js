@@ -18,281 +18,83 @@ user.addEventListener('click', function () {
 window.onscroll = () => {
   form.classList.remove('active-form');
 };
-
-var mockData = [
-  {
-    id: 1,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/banner1.jpg',
-  },
-  {
-    id: 2,
-    name: 'Áo lo nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 3,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 4,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 5,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 6,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 7,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 8,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 9,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 10,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 11,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 12,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 13,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 14,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 16,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 17,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 18,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 19,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 20,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 21,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 22,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 23,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 24,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 25,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 26,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 27,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 28,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 26,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 27,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-  {
-    id: 28,
-    name: 'Áo thun nam siêu đẹp zzzzzzzzzzzzzz',
-    price: 150.0,
-    sale: 'Đã bán 2',
-    image: '/images/ao1.jpg',
-  },
-];
+// var mockData = [];
+// async function getItems() {
+//   mockData = await axiosClient.get('/items');
+// }
+// getItems();
 
 // search
 const searchBar = document.querySelector('.header-search input');
 searchBar.addEventListener('input', function (e) {
   let txtSearch = e.target.value.trim().toLowerCase();
-  let listProductDOM = document.querySelectorAll('.product-item-name');
-  listProductDOM.forEach((item) => {
-    if (item.innerText.toLowerCase().inclues(txtSearch)) {
-      item.classList.remove('hide');
-    } else {
-      item.classList.add('hide');
-    }
-  });
+  const productsSearch = products.filter((item) =>
+    item.name.toLowerCase().includes(txtSearch)
+  );
+  renderProduct(productsSearch);
+  // let listProductDOM = document.querySelectorAll('.product-item-name');
+  // listProductDOM.forEach((item) => {
+  //   if (item.innerText.toLowerCase().inclues(txtSearch)) {
+  //     item.classList.remove('hide');
+  //   } else {
+  //     item.classList.add('hide');
+  //   }
+  // });
 });
-
-let perPage = 10; // số items hiển thị
-let currentPage = 1;
-let start = 0;
-let end = perPage;
-
-const totalPages = Math.ceil(mockData.length / perPage);
 
 // render :ListPage
 const listPage = document.querySelector('.content-number-page');
-function renderPaginationPage() {
+function renderPaginationPage(totalPages) {
   let html = '';
   for (let i = 1; i <= totalPages; i++) {
     html += `
-    <button class="btn-number">${i}</button>
+    <button class="btn-number" id=${i}>${i}</button>
     `;
   }
   listPage.innerHTML = html;
 }
 renderPaginationPage();
 
-function getCurrentPage(currentPage) {
-  start = (currentPage - 1) * perPage;
-  end = currentPage * perPage;
-  // totalPages = Math.ceil(mockData.length / perPage);
-}
+//renderproduct
+const productsElement = document.querySelector('.product__bottom');
 
-// render products
-const products = document.querySelector('.product__bottom');
-
-function numPages() {
-  return Math.ceil(mockData.length / perPage);
-}
-
-function renderProduct() {
+let currentPage = 0;
+const SIZE = 5;
+let products = [];
+(async () => {
+  try {
+    products = await axiosClient.get('/items');
+    renderProduct(products);
+    renderPaginationPage(Math.ceil(products.length / SIZE));
+    console.log(products.length);
+  } catch (error) {
+    console.log(error);
+  }
+})();
+async function renderProduct(products) {
   // if (perPage < 1) perPage = 1;
   // if (perPage > numPages()) perPage = numPages();
-  for (var i = (currentPage - 1) * perPage; i < perPage * currentPage; i++) {
-    products.innerHTML += `
-    <div class="product-items">
+  // 0 => 0 - 19   => 0 - SIZE
+  // 1 => 20 - 39  => SIZE- SIZE * 2-1
+  // 2 => 40 - 49  => SIZE * 2 - SIZE * 3-1
+  // 3 => 50 - 79  => SIZE * 3  - SIZE * 4-1
+  console.log({ currentPage });
+  const data_render = products.slice(
+    currentPage * SIZE,
+    (currentPage + 1) * SIZE
+  );
+  productsElement.innerHTML = '';
+  for (let i = 0; i < data_render.length; i++) {
+    productsElement.innerHTML += `
+    <div class="product-items" id={${products[i]._id}}>
                <div class="product-item-name">
-               <a href="productDetail.html"><img src="${mockData[i].image}" alt="" /></a>
+               <a href="productDetail.html"><img src="${products[i].image}" alt="" /></a>
                  <h4>
-                   ${mockData[i].name}
+                   ${products[i].name}
                  </h4>
                  <div class="product-item-price">
                    <div class="price-item-cost">
-                     <div class="product-price-start">₫90.000</div>
+                     <div class="product-price-start">${products[i].price} VNĐ</div>
                      <div class="product-price-empty"></div>
                      <div class="product-price-end">₫180.000</div>
                    </div>
@@ -302,16 +104,24 @@ function renderProduct() {
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
-                     <div class="product-item-sale">Đã bán 20</div>
+                     <div class="product-item-sale">Đã bán</div>
                    </div>
                  </div>
-                 <div class="product-item-produce">TP. Hồ Chí Minh</div>
+                 <div class="product-item-produce">TP. Đà Nẵng</div>
                </div>
              </div>
+
+
+  
     `;
+    try {
+      const productItemsElement = document.querySelector('#' + products[i]._id);
+      productItemsElement.addEventListener('click', () => {
+        localStorage.setItem('detail-product', products[i]);
+      });
+    } catch (error) {}
   }
 }
-renderProduct();
 // Pagination
 function changePage() {
   const currentPages = document.querySelectorAll('.content-number-page button');
@@ -321,7 +131,7 @@ function changePage() {
       currentPage = value;
       $('.content-number-page .btn-number').removeClass('active');
       currentPages[i].classList.add('active');
-      if (currentPage > 1 && currentPage < totalPages) {
+      if (currentPage > 1 && currentPage < products.length) {
         $('.btn-prev').removeClass('btn-active');
         $('.btn-next').removeClass('btn-active');
       }
@@ -332,7 +142,7 @@ function changePage() {
         $('.btn-next').addClass('btn-active');
       }
       getCurrentPage(currentPage);
-      renderProduct();
+      renderProduct(products);
     });
   }
 }
@@ -343,34 +153,34 @@ const btnPrev = document.querySelector('.btn-prev');
 
 btnNext.addEventListener('click', () => {
   currentPage++;
-  if (currentPage > totalPages) {
-    btnNext.attr('disabled', 'disabled');
-  }
-  if (currentPage === totalPages) {
-    $('.btn-next').addClass('active');
-  }
-  $('.btn-prev').removeClass('btn-active');
-  $('.content-number-page .btn-number').removeClass('active');
-  $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
-    'active'
-  );
-  getCurrentPage(currentPage);
-  renderProduct();
+  // if (currentPage > totalPages) {
+  //   btnNext.attr('disabled', 'disabled');
+  // }
+  // if (currentPage === totalPages) {
+  //   $('.btn-next').addClass('active');
+  // }
+  // $('.btn-prev').removeClass('btn-active');
+  // $('.content-number-page .btn-number').removeClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
+  //   'active'
+  // );
+  // getCurrentPage(currentPage);
+  renderProduct(products);
 });
 
 btnPrev.addEventListener('click', () => {
   currentPage--;
-  if (currentPage <= 1) {
-    currentPage = 1;
-  }
-  if (currentPage === 1) {
-    $('.btn-prev').addClass('btn-active');
-  }
-  $('.content-number-page .btn-number').removeClass('active');
-  $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
-    'active'
-  );
-  $('.btn-next').removeClass('btn-active');
-  getCurrentPage(currentPage);
-  renderProduct();
+  // if (currentPage <= 1) {
+  //   currentPage = 1;
+  // }
+  // if (currentPage === 1) {
+  //   $('.btn-prev').addClass('btn-active');
+  // }
+  // $('.content-number-page .btn-number').removeClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
+  //   'active'
+  // );
+  // $('.btn-next').removeClass('btn-active');
+  // getCurrentPage(currentPage);
+  renderProduct(products);
 });

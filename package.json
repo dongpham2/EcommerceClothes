@@ -1,7 +1,6 @@
 {
   "name": "ecomerceclothes",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -25,5 +24,6 @@
     "json-server": "^0.17.0",
     "json-server-auth": "^2.1.0",
     "mongodb": "^4.3.1"
-  }
+  },
+  "description": ""
 }
