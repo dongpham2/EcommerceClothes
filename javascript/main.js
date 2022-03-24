@@ -28,14 +28,18 @@ window.onscroll = () => {
 const searchBar = document.querySelector('.header-search input');
 searchBar.addEventListener('input', function (e) {
   let txtSearch = e.target.value.trim().toLowerCase();
-  let listProductDOM = document.querySelectorAll('.product-item-name');
-  listProductDOM.forEach((item) => {
-    if (item.innerText.toLowerCase().inclues(txtSearch)) {
-      item.classList.remove('hide');
-    } else {
-      item.classList.add('hide');
-    }
-  });
+  const productsSearch = products.filter((item) =>
+    item.name.toLowerCase().includes(txtSearch)
+  );
+  renderProduct(productsSearch);
+  // let listProductDOM = document.querySelectorAll('.product-item-name');
+  // listProductDOM.forEach((item) => {
+  //   if (item.innerText.toLowerCase().inclues(txtSearch)) {
+  //     item.classList.remove('hide');
+  //   } else {
+  //     item.classList.add('hide');
+  //   }
+  // });
 });
 
 // render :ListPage
@@ -82,7 +86,7 @@ async function renderProduct(products) {
   productsElement.innerHTML = '';
   for (let i = 0; i < data_render.length; i++) {
     productsElement.innerHTML += `
-    <div class="product-items">
+    <div class="product-items" id={${products[i]._id}}>
                <div class="product-item-name">
                <a href="productDetail.html"><img src="${products[i].image}" alt="" /></a>
                  <h4>
@@ -106,7 +110,16 @@ async function renderProduct(products) {
                  <div class="product-item-produce">TP. Đà Nẵng</div>
                </div>
              </div>
+
+
+  
     `;
+    try {
+      const productItemsElement = document.querySelector('#' + products[i]._id);
+      productItemsElement.addEventListener('click', () => {
+        localStorage.setItem('detail-product', products[i]);
+      });
+    } catch (error) {}
   }
 }
 // Pagination
