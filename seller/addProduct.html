@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/addProduct.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/themes/splide-skyblue.min.css">
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+        <title>Thêm sản phẩm - FlexinS </title>
+    </head>
+    <body>
+      <header class="header">
+        <div class="header__title container">
+          <div class="header__title-content">
+            <a href="main.html"><img src="../images/logo.png" alt="" /></a>
+            <div class="header-search">
+              <input
+                type="text"
+                placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="header-icon-buyer">
+              <div class="header-bell">
+                <i class="fa-solid fa-bell btn-icon"></i>
+              </div>
+              <div class="header-user">
+                <div class="header-user-icon">
+                  <i class="fa-solid fa-user btn-icon"></i>
+                </div>
+                <div class="form">
+                  <a href="" style="color: black;"><div class="com-form logout">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                    <span>Đăng xuất</span>
+                  </div></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+          <div class="container nav__container">
+            <div class="nav-content">
+                <h4>Shop</h4>
+                <a href="seller.html" style="color:black;">
+                  <div class="shop nav-profile ">
+                      <ion-icon name="image-outline"></ion-icon>
+                      Hồ sơ Shop
+                    </div>
+                </a>
+                <div class="shop nav-product active">
+                  <ion-icon name="shirt-outline"></ion-icon>
+                  Sản phẩm của shop
+                </div>
+                <div class="shop nav-statis">
+                  <a href="./statis.html" class="nav-link">
+                    <ion-icon name="stats-chart-outline"></ion-icon>
+                    Thống kê doanh thu
+                  </a>
+                </div>
+            </div>
+            <div class="add-products">
+                  <div class="add-product">
+                      <h2>Thêm sản phẩm</h2>
+                        <div class="form-fields">
+                            <div class="field__img ">
+                              <!-- <p class="icon-plus">+</p> -->
+                              <!-- <p class="text-add">Thêm ảnh</p> -->
+                                <input class="btn__add-img item" placeholder="Thêm ảnh" type="file" required>
+                                    
+                                </input>
+   
+                            </div>
+                            <div class="field__details">
+                                <div class="field__name">
+                                    <input class="field item inp_name" placeholder="Tên sản phẩm">
+                                </div>
+                                <div class="field__price">
+                                    <input class="field item" type="number" placeholder="Đơn giá">
+                                </div>
+                                <div class="subgrid-1" id="gr-1">
+                                    <div class="col-color">
+                                      <input class="input_color item" placeholder="Thêm màu">
+                                    </div>
+                                    <div class="col-amount">
+                                      <input class="input_amount item" type="number" placeholder="Số lượng">
+                                    </div>
+                                    <div class="col-img">
+                                      <input class="btn_img item" type="file" required> 
+                                      </input>
+                                    </div>
+                                    <div class="col-color" id="subgr-1-0">
+                                      <input class="input_color item" placeholder="Thêm màu">
+                                    </div>
+                                    <div class="col-amount" id="subgr-1-1">
+                                      <input class="input_amount item" type="number" placeholder="Số lượng">
+                                    </div>
+                                    <div class="col-img" id="subgr-1-2">
+                                      <input class="btn_img item" type="file" required> 
+                                      </input>
+                                      <p class="icon-close" onclick="removeColor()">X</p>
+                                    </div>
+                                    <div class="col-color" id="subgr-1-0">
+                                      <input class="input_color item" placeholder="Thêm màu">
+                                    </div>
+                                    <div class="col-amount" id="subgr-1-1">
+                                      <input class="input_amount item" type="number" placeholder="Số lượng">
+                                    </div>
+                                    <div class="col-img" id="subgr-1-2">
+                                      <input class="btn_img item" type="file" required> 
+                                      </input>
+                                      <p class="icon-close" onclick="removeColor()">X</p>
+                                    </div>
+                                </div>
+                                <button class="btn_add" onclick="addColor()">Thêm màu</button>
+                                <div class="subgrid-2" id="gr-2">
+                                    <div class="subgrid-item">
+                                        <input class="input_size item" placeholder="Kích cỡ vd:S(45-50KG)">
+                                    </div>
+                                    <div class="subgrid-item" id="subgr-2">
+                                      <input class="input_size item" placeholder="Kích cỡ vd:S(45-50KG)">
+                                      <p class="icon-close" onclick="removeSize()">X</p>
+                                    </div>
+                                    <div class="subgrid-item" id="subgr-2">
+                                      <input class="input_size item" placeholder="Kích cỡ vd:S(45-50KG)">
+                                      <p class="icon-close" onclick="removeSize()">X</p>
+                                    </div>
+                                </div>
+                                <button class="btn_add" onclick="addSize()">Thêm kích cỡ</button>
+                                <div class="description">
+                                    <textarea class="input_description item" placeholder="Mô tả sản phẩm..." ></textarea>
+                                    <!-- <div id="contenteditable-root" contenteditable="true" dir="auto" class="style-scope yt-formatted-string" aria-label="Viết bình luận..."></div> -->
+                                  </div>
+                            </div>
+                        </div>
+                      <div class="nav-button">
+                        <div class="btn__add-product">
+                          <button class="btn_add">Thêm sản phẩm</button>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+        <footer id="footer">
+          <div class="layout-cover">
+            <div class="layout">
+                <div class="layout-item">
+                    <image src="../images/logo.png" class="logo-img"></image>
+                </div>
+                <div class="layout-item">
+                    <h3>SHOP</h3>
+                    <div class="col-2">
+                      <a class="nav-link__footer" href="#">HỒ SƠ SHOP</a>
+                      <a class="nav-link__footer" href="#">SẢN PHẨM SHOP</a>
+                      <a class="nav-link__footer" href="#">THỐNG KÊ DOANH THU</a>
+                    </div>
+                    
+                </div>
+                <div class="layout-item">
+                    <h3>MENU</h3>
+                    <div class="col-3">
+                      <a class="nav-link__footer" href="#">THÔNG TIN</a>
+                      <a class="nav-link__footer" href="#">LIÊN HỆ</a>
+                      <a class="nav-link__footer" href="#">TÀI KHOẢN CỦA TÔI</a>
+                      <a class="nav-link__footer" href="#">ĐĂNG NHẬP</a>
+                  </div>
+                </div>
+                <div class="layout-item">
+                    <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+                    <div class="col-4">
+                      <h4>ĐỊA CHỈ</h4>
+                      <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+                      <h4>ĐIỆN THOẠI</h4>
+                      <span>0123456789</span>
+                      <h4>EMAIL</h4>
+                      <span>DONGPHAM21082001@GMAIL.COM</span>
+                      <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+                      <span>TỪ T2-CN/7:00AM - 8:00PM</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </footer> 
+      <script src="/javascript/profileUser.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+      <script src="/javascript/statis.js"></script>
+      <script src="../javascript/addProductSeller.js"></script>
+    </body>
+</html>

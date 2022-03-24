@@ -241,70 +241,144 @@ body {
 }
 
 /* View product */
-.my-product h2{
+.add-product h2{
   margin-top: -10px;
   font-size: 22px;
+  margin-bottom: 20px;
 }
-.my-products {
+.add-products {
   width: 79%;
   padding: 20px;
   padding-top: 0;
 }
-.my-product {
-  /* cursor: pointer; */
-  background: #fff;
+.add-product {
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 }
-.my-product h2{
+.add-product h2{
   /* display: inline-block; */
-  padding: 6px;
+  padding: 0px 6px 0px 0px;
   border-radius: 10px;
-  /* background-color: rgba(240, 227, 222, 1);  */
+}
+/* form-fields*/
+.item{
+    background-color: #fff;
+    border: solid var(--main-color) 2px;
+}
+/* add big image */
+.form-fields{
+    display: flex;
+
+}
+.field__img{
+    padding-right: 50px;
+}
+.btn__add-img{
+  cursor: pointer;
+    /* background-color: #fff;
+    border: solid var(--main-color) 2px; */
+    height: 150px;
+    width: 150px;
+    font-size: 20px;
+ 
+    padding-top: 60px;
+    padding-left: 25px;
+}
+.icon-plus{
+  cursor: pointer;
+  visibility: inherit;
+  position: absolute;
+  padding: 0px 50px 0px 45px;
+  font-size: 20px;
+  color: var(--main-color);
+  font-size: 100px;
+}
+.btn__add-img::before{
+  content: 'Thêm ảnh';
+  padding-right: 200px;
+}
+
+/* more details*/
+.field{
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.field__details{
+  width: 100%;
+}
+.col-img{
+  display: flex;
 }
 /* grid */
-.grid-items{
+.subgrid-1{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-column-gap: 1.5%;
-  grid-row-gap: 15px;
+  grid-template-columns: 1.1fr 1.1fr 0.8fr;
+  /* grid-template-rows: 1fr 1fr; */
 }
-.item{
-  padding: 2px;
-  /* background-color: gray; */
-  height: 380px;
+.inp_name{
+  text-transform: uppercase;
 }
-.item:hover{
-  background-color: rgb(243, 243, 243);
-}
-.item-img{
-  cursor: pointer;
-  width: 158px;
-  height: 240px;
-}
-.btn-delete{
+.btn_img{
+  /* display: flex; */
   width: 100%;
-  margin-top: 0px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: white;
-  border: 1px solid #57E2EB;
-  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
 }
-.btn-delete:hover{
-  background-color: #57e2eb;
+.btn_img::before{
+  padding-left: 50px;
+  content: '+ Thêm ảnh';
 }
-.item-name{
+
+/* .btn_img p{
+  margin-right: 10px;
+  color: var(--main-color);
+  font-size: 30px;
+} */
+.input_color, .input_amount {
+  width: 90%;
+  margin-bottom: 10px;
+  height: 50px;
+  padding-left: 10px;
+}
+.input_size{
+  margin-top: 10px;
+  height: 50px;
+  width: 90%;
+}
+.btn_img{
+  height: 50px;
+}
+.subgrid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2%;
+  margin-bottom: 10px;
+}
+.subgrid-item{
+  display: flex;
+  align-items: center;
+}
+.icon-close{
   cursor: pointer;
-  padding: 10px 0px 10px 0px;
+  color: red;
+  margin-left: 2px;
+  margin-top: 15px;
 }
-.item-price{
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 20px;
+.input_size{
+  padding-left: 10px;
+}
+.description{
+  margin-top: 10px;
+}
+.input_description{
+  display: block;
+  resize: none;
+  height: 100px;
+  width: 100%;
+  padding: 5px 0px 5px 10px;
 }
 
 /* Button add & nav-pages */
@@ -312,45 +386,23 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  justify-content: right;
 }
 .btn__add-product{
   display: flex;
 }
-.icon-add{
-  cursor: pointer;
-  font-size: 90px;
-}
 .btn_add{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   background-color: #57E2EB;
   border: none;
   font-weight: bold;
   font-size: 16px;
   color: black;
   text-align: center;
-  padding-top: 20px;
 
   height: 55px;
   width: 150px;
 }
-.nav-pages{
-  display: flex;
-  align-items: center;
-}
-.nav-page{
-  cursor: pointer;
-  display: flex;
-  height: 40px;
-  width: 40px;
-  font-size: 20px;
-  background-color: rgb(218, 218, 218);
-  margin-left: 7px;
-  border-radius: 5px;
-
-  align-items: center;
-  justify-content: center;
-}
-
 
 /* Footer */
 footer{
@@ -359,7 +411,7 @@ footer{
   bottom: 0;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #57E2EB;
+  background-color: var(--main-color);
   height: 350px;
   /* justify-content: ; */
 }
