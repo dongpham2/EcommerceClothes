@@ -21,7 +21,7 @@ btn_login.addEventListener('click', async function () {
   console.log('value', passwordLogin.value);
   try {
     const res = await axiosClient.post('/users/signin', {
-      email: emailLogin.value,
+      username: emailLogin.value,
       password: passwordLogin.value,
     });
     if (res.success) {
@@ -42,11 +42,15 @@ btn_register.addEventListener('click', async function () {
     }
 
     const res = await axiosClient.post('/users/signup', {
-      fullname: 'admin1232323',
-      username: 'admin121212',
-      sdt: '0913420197',
-      password: 'admin123',
+      fullname: fullNameRegister.value,
+      username: usernameRegister.value,
+      phone: phoneRegister.value,
+      password: passwordRegister.value,
+      repeat_password : confirmPasswordRegister.value,
     });
+    if (res.success) {
+      window.location.href = './login.html';
+    }
   } catch (error) {
     alert(error.message);
   }
