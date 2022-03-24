@@ -6,7 +6,7 @@ document.querySelector('.img-btn').addEventListener('click', function () {
 
 const formLogin = document.querySelector('.sign-in');
 const btn_login = document.querySelector('#btn-login');
-const emailLogin = document.getElementById('login-username');
+const usernameLogin = document.getElementById('login-username');
 const passwordLogin = document.getElementById('login-password');
 
 const formRegister = document.querySelector('.sign-up');
@@ -46,7 +46,7 @@ btn_register.addEventListener('click', async function () {
       username: usernameRegister.value,
       phone: phoneRegister.value,
       password: passwordRegister.value,
-      repeat_password : confirmPasswordRegister.value,
+      repeat_password: confirmPasswordRegister.value,
     });
     if (res.success) {
       window.location.href = './login.html';

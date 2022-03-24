@@ -57,6 +57,7 @@ img {
   width: 100%;
 }
 body {
+  width: 100%;
   font-family: sans-serif;
   justify-content: center;
   align-items: center;
@@ -80,6 +81,8 @@ body {
 .header {
   background: var(--main-color);
   width: 100%;
+  background-position:  cover;
+  object-fit:  cover;
 }
 .header__title-content {
   height: 110px;
@@ -223,6 +226,9 @@ body {
   display: flex;
   overflow: hidden;
   width: 800px;
+}
+.content-slider {
+
 }
 .content-slider img {
   border-radius: 2px;
@@ -405,7 +411,7 @@ body {
 }
 .product-items {
   cursor: pointer;
-  min-height: 450px;
+  height: 450px;
   width: 188px;
   padding: 2px 1px 2px 3px;
 }
@@ -572,3 +578,5 @@ footer {
 .hide {
   display: none;
 }
+
+

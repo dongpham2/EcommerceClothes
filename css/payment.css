@@ -387,6 +387,7 @@ body {
 
 /* footer */
 footer{
+  margin-top: 120px;
   display: block;
   /* bottom: 0; */
   width: 100%;
