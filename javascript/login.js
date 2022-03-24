@@ -6,7 +6,7 @@ document.querySelector('.img-btn').addEventListener('click', function () {
 
 const formLogin = document.querySelector('.sign-in');
 const btn_login = document.querySelector('#btn-login');
-const emailLogin = document.getElementById('login-username');
+const usernameLogin = document.getElementById('login-username');
 const passwordLogin = document.getElementById('login-password');
 
 const formRegister = document.querySelector('.sign-up');
@@ -21,7 +21,7 @@ btn_login.addEventListener('click', async function () {
   console.log('value', passwordLogin.value);
   try {
     const res = await axiosClient.post('/users/signin', {
-      email: emailLogin.value,
+      username: usernameLogin.value,
       password: passwordLogin.value,
     });
     if (res.success) {
