@@ -317,3 +317,9 @@ button {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+.eye-pw {
+  position: relative;
+  transform: translate(119px, -23px);
+  cursor: pointer;
+  color:  black;
+}
