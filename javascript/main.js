@@ -6,7 +6,7 @@ setInterval(function () {
   if (counter > 4) {
     counter = 1;
   }
-}, 5000);
+}, 4000);
 
 // click
 var user = document.querySelector('.header-user-icon');
@@ -18,12 +18,6 @@ user.addEventListener('click', function () {
 window.onscroll = () => {
   form.classList.remove('active-form');
 };
-// var mockData = [];
-// async function getItems() {
-//   mockData = await axiosClient.get('/items');
-// }
-// getItems();
-
 // search
 const searchBar = document.querySelector('.header-search input');
 searchBar.addEventListener('input', function (e) {
@@ -32,15 +26,17 @@ searchBar.addEventListener('input', function (e) {
     item.name.toLowerCase().includes(txtSearch)
   );
   renderProduct(productsSearch);
-  // let listProductDOM = document.querySelectorAll('.product-item-name');
-  // listProductDOM.forEach((item) => {
-  //   if (item.innerText.toLowerCase().inclues(txtSearch)) {
-  //     item.classList.remove('hide');
-  //   } else {
-  //     item.classList.add('hide');
-  //   }
-  // });
+  let listProductDOM = document.querySelectorAll('.product-item-name');
+  listProductDOM.forEach((item) => {
+    if (item.innerText.toLowerCase().inclues(txtSearch)) {
+      item.classList.remove('hide');
+    } else {
+      item.classList.add('hide');
+    }
+  });
 });
+// search by price
+
 
 // render :ListPage
 const listPage = document.querySelector('.content-number-page');
@@ -48,29 +44,33 @@ function renderPaginationPage(totalPages) {
   let html = '';
   for (let i = 1; i <= totalPages; i++) {
     html += `
-    <button class="btn-number" id=${i}>${i}</button>
+      <button class="btn-number" id=${i}>${i}</button>
     `;
   }
   listPage.innerHTML = html;
 }
 renderPaginationPage();
 
+
 //renderproduct
 const productsElement = document.querySelector('.product__bottom');
 
 let currentPage = 0;
-const SIZE = 5;
+const SIZE = 20;
+
 let products = [];
 (async () => {
   try {
     products = await axiosClient.get('/items');
     renderProduct(products);
     renderPaginationPage(Math.ceil(products.length / SIZE));
-    console.log(products.length);
+    
   } catch (error) {
     console.log(error);
   }
 })();
+
+
 async function renderProduct(products) {
   // if (perPage < 1) perPage = 1;
   // if (perPage > numPages()) perPage = numPages();
@@ -78,7 +78,6 @@ async function renderProduct(products) {
   // 1 => 20 - 39  => SIZE- SIZE * 2-1
   // 2 => 40 - 49  => SIZE * 2 - SIZE * 3-1
   // 3 => 50 - 79  => SIZE * 3  - SIZE * 4-1
-  console.log({ currentPage });
   const data_render = products.slice(
     currentPage * SIZE,
     (currentPage + 1) * SIZE
@@ -94,9 +93,8 @@ async function renderProduct(products) {
                  </h4>
                  <div class="product-item-price">
                    <div class="price-item-cost">
-                     <div class="product-price-start">${products[i].price} VNĐ</div>
-                     <div class="product-price-empty"></div>
-                     <div class="product-price-end">₫180.000</div>
+                     <div class="product-price-start">${products[i].price} ₫</div>
+                     
                    </div>
                    <div class="product-item-star">
                      <i class="fa-solid fa-star"></i>
@@ -104,14 +102,12 @@ async function renderProduct(products) {
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
                      <i class="fa-solid fa-star"></i>
-                     <div class="product-item-sale">Đã bán</div>
+                     <div class="product-item-sale">Đã bán:</div>
                    </div>
                  </div>
                  <div class="product-item-produce">TP. Đà Nẵng</div>
                </div>
              </div>
-
-
   
     `;
     try {
@@ -123,8 +119,8 @@ async function renderProduct(products) {
   }
 }
 // Pagination
-function changePage() {
-  const currentPages = document.querySelectorAll('.content-number-page button');
+function changePage(totalPages) {
+  const currentPages = document.querySelectorAll('.content-number-page');
   for (let i = 0; i < currentPages.length; i++) {
     currentPages[i].addEventListener('click', () => {
       let value = i + 1;
@@ -141,7 +137,6 @@ function changePage() {
       if (currentPage === totalPages) {
         $('.btn-next').addClass('btn-active');
       }
-      getCurrentPage(currentPage);
       renderProduct(products);
     });
   }
@@ -151,36 +146,35 @@ changePage();
 const btnNext = document.querySelector('.btn-next');
 const btnPrev = document.querySelector('.btn-prev');
 
-btnNext.addEventListener('click', () => {
+btnNext.addEventListener('click', (totalPages) => {
+  console.log(totalPages);
   currentPage++;
-  // if (currentPage > totalPages) {
-  //   btnNext.attr('disabled', 'disabled');
-  // }
-  // if (currentPage === totalPages) {
-  //   $('.btn-next').addClass('active');
-  // }
-  // $('.btn-prev').removeClass('btn-active');
-  // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
-  //   'active'
-  // );
-  // getCurrentPage(currentPage);
+  if (currentPage > totalPages) {
+    btnNext.attr('disabled', 'disabled');
+  }
+  if (currentPage === totalPages) {
+    $('.btn-next').addClass('active');
+  }
+  $('.btn-prev').removeClass('btn-active');
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
   renderProduct(products);
 });
 
 btnPrev.addEventListener('click', () => {
   currentPage--;
-  // if (currentPage <= 1) {
-  //   currentPage = 1;
-  // }
-  // if (currentPage === 1) {
-  //   $('.btn-prev').addClass('btn-active');
-  // }
-  // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage - 1})`).addClass(
-  //   'active'
-  // );
-  // $('.btn-next').removeClass('btn-active');
-  // getCurrentPage(currentPage);
+  if (currentPage <= 1) {
+    currentPage = 1;
+  }
+  if (currentPage === 1) {
+    $('.btn-prev').addClass('btn-active');
+  }
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
+  $('.btn-next').removeClass('btn-active');
   renderProduct(products);
 });
