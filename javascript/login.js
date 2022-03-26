@@ -21,7 +21,7 @@ btn_login.addEventListener('click', async function () {
   console.log('value', passwordLogin.value);
   try {
     const res = await axiosClient.post('/users/signin', {
-      username: emailLogin.value,
+      username: usernameLogin.value,
       password: passwordLogin.value,
     });
     if (res.success) {
