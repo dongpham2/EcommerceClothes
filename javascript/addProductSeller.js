@@ -7,8 +7,10 @@ function addColor(){
       '<input class="input_amount item" type="number" placeholder="Số lượng">'+
     '</div>'+
     '<div class="col-img" id="subgr-1-2">'+
-    '<input class="btn_img item" type="file" required>'+ 
-    '</input>'+
+    '<div class="item-3 item">'+
+      '<input class="input-file" id="my-file" type="file">'+
+      '<label tabindex="0" for="my-file" class="input-file-trigger">+ Thêm ảnh</label>'+
+    '</div>'+
     '<p class="icon-close" onclick="removeColor()">X</p>'+
     '</div>';
   document.getElementById("gr-1").insertAdjacentHTML('beforeend', html);
