@@ -123,7 +123,7 @@ body {
   transform: translate(-35px, -10px);
   position: relative;
 }
-.header-user-icon h5{
+.header-user-icon h5 {
   font-size: 20px;
   font-weight: 800;
   cursor: pointer;
@@ -249,7 +249,15 @@ body {
 }
 /* product title */
 .content-name h2 {
+  width: 648px;
   font-weight: 300;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .content-name-star {
   margin-top: 10px;
