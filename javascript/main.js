@@ -37,7 +37,6 @@ searchBar.addEventListener('input', function (e) {
 });
 // search by price
 
-
 // render :ListPage
 const listPage = document.querySelector('.content-number-page');
 function renderPaginationPage(totalPages) {
@@ -51,7 +50,6 @@ function renderPaginationPage(totalPages) {
 }
 renderPaginationPage();
 
-
 //renderproduct
 const productsElement = document.querySelector('.product__bottom');
 
@@ -64,12 +62,10 @@ let products = [];
     products = await axiosClient.get('/items');
     renderProduct(products);
     renderPaginationPage(Math.ceil(products.length / SIZE));
-    
   } catch (error) {
     console.log(error);
   }
 })();
-
 
 async function renderProduct(products) {
   // if (perPage < 1) perPage = 1;
@@ -84,38 +80,44 @@ async function renderProduct(products) {
   );
   productsElement.innerHTML = '';
   for (let i = 0; i < data_render.length; i++) {
-    productsElement.innerHTML += `
-    <div class="product-items" id={${products[i]._id}}>
-               <div class="product-item-name">
-               <a href="productDetail.html"><img src="${products[i].image}" alt="" /></a>
-                 <h4>
-                   ${products[i].name}
-                 </h4>
-                 <div class="product-item-price">
-                   <div class="price-item-cost">
-                     <div class="product-price-start">${products[i].price} ₫</div>
-                     
-                   </div>
-                   <div class="product-item-star">
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <div class="product-item-sale">Đã bán:</div>
-                   </div>
-                 </div>
-                 <div class="product-item-produce">TP. Đà Nẵng</div>
-               </div>
-             </div>
-  
+    const divElement = document.createElement('div');
+    divElement.setAttribute('class', 'product-item');
+    divElement.setAttribute('id', products[i]._id);
+    divElement.innerHTML = `
+    <div class="product-item-name">
+    <a ><img src="${products[i].image}" alt="" /></a>
+      <h4>
+        ${products[i].name}
+      </h4>
+      <div class="product-item-price">
+        <div class="price-item-cost">
+          <div class="product-price-start">${products[i].price} ₫</div>
+          
+        </div>
+        <div class="product-item-star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <div class="product-item-sale">Đã bán:</div>
+        </div>
+      </div>
+      <div class="product-item-produce">TP. Đà Nẵng</div>
+    </div>
     `;
+    productsElement.appendChild(divElement);
     try {
-      const productItemsElement = document.querySelector('#' + products[i]._id);
+      console.log('run it', `#${products[i]._id}`);
+      const productItemsElement = document.getElementById(`${products[i]._id}`);
+      console.log(productItemsElement);
       productItemsElement.addEventListener('click', () => {
-        localStorage.setItem('detail-product', products[i]);
+        localStorage.setItem('detail-product', JSON.stringify(products[i]));
+        window.location.href = './productDetail.html';
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 // Pagination
@@ -149,32 +151,28 @@ const btnPrev = document.querySelector('.btn-prev');
 btnNext.addEventListener('click', (totalPages) => {
   console.log(totalPages);
   currentPage++;
-  if (currentPage > totalPages) {
-    btnNext.attr('disabled', 'disabled');
-  }
-  if (currentPage === totalPages) {
-    $('.btn-next').addClass('active');
-  }
-  $('.btn-prev').removeClass('btn-active');
-  $('.content-number-page .btn-number').removeClass('active');
-  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
-    'active'
-  );
+  // if (currentPage > totalPages) {
+  //   btnNext.attr('disabled', 'disabled');
+  // }
+  // if (currentPage === totalPages) {
+  //   $('.btn-next').addClass('active');
+  // }
+  // $('.btn-prev').removeClass('btn-active');
+  // $('.content-number-page .btn-number').removeClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass('active');
   renderProduct(products);
 });
 
 btnPrev.addEventListener('click', () => {
   currentPage--;
-  if (currentPage <= 1) {
-    currentPage = 1;
-  }
-  if (currentPage === 1) {
-    $('.btn-prev').addClass('btn-active');
-  }
-  $('.content-number-page .btn-number').removeClass('active');
-  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
-    'active'
-  );
-  $('.btn-next').removeClass('btn-active');
+  // if (currentPage <= 1) {
+  //   currentPage = 1;
+  // }
+  // if (currentPage === 1) {
+  //   $('.btn-prev').addClass('btn-active');
+  // }
+  // $('.content-number-page .btn-number').removeClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass('active');
+  // $('.btn-next').removeClass('btn-active');
   renderProduct(products);
 });
