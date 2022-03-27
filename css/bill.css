@@ -264,6 +264,10 @@ body {
 .bill-name-color select {
   width: 100px;
 }
+.bill-name-size {
+  font-size: 18px;
+  margin-left: 5px;
+}
 /* product number */
 .buttons_added {
   opacity: 1;

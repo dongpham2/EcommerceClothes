@@ -26,5 +26,17 @@ save.addEventListener("click", function() {
 window.onscroll = () => {
     form.classList.remove("active-form");
 }
+const nameUser = document.querySelector('.nav-name');
+(async () => {
+    try {
+      products = await axiosClient.get('/users/userID');
+      
+    } catch (error) {
+      console.log(error);
+    }
+  })();
 
+  async function renderProfile(users) {
+
+  }
 

@@ -1,13 +1,6 @@
 var deleteCart = document.querySelector("#btn-delete")
 var product = document.querySelector(".content-cart-container");
 
-deleteCart.addEventListener("click", function(e) {
-  
-})
-
-
-
-
 // Function plus and sub number
 $("input.input-qty").each(function () {
   var $this = $(this),
@@ -37,3 +30,50 @@ $("#btn-delete").click(function() {
     alert($(this).val());
   })
 })
+
+
+const products_API = 'https://api-start-deploy.herokuapp.com/items'
+
+fetch(products_API)
+.then(response => response.json())
+.then(result => {
+  console.log('Success:', result);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+function start() {
+  // getProducts(renderProducts)
+}
+start()
+
+function getProducts(callback) {
+  fetch(products_API)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(callback);
+}
+function renderProducts(products) {
+  var listProducts = document.querySelector('.slide-sliders');
+  var htmls = products.map(function(product) {
+    return `
+    <div class="slide-content">
+      <a href=""><img src="${product.image}" alt=""></a>
+        <div class="slide-name">
+          <h4>${product.name}</h4>
+        </div>
+        <div class="slide-detail">
+          <div class="slide-detail-price">
+            ${product.price}₫
+          </div>
+          <div class="slide-detail-sale">
+            Đã bán:
+          </div>
+        </div>
+    </div>
+    `;
+  });
+  listProducts.innerHTML = htmls.join('')
+}

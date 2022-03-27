@@ -123,7 +123,11 @@ body {
   transform: translate(-35px, -10px);
   position: relative;
 }
-
+.header-user-icon h5{
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
 .header-user {
   position: relative;
   top: -10px;
@@ -158,7 +162,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 .form.active-form {
-  transform: translate(-100px, 11px);
+  transform: translate(-36px, 10px);
   display: block;
 }
 .form:before {

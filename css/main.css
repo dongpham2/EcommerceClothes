@@ -137,6 +137,8 @@ body {
   right: 30px;
 }
 .header-user-icon {
+  cursor: pointer;
+  display: flex;
   padding: 18px 2px;
 }
 .header-user {
@@ -173,7 +175,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 .form.active-form {
-  transform: translate(-100px, -11px);
+  transform: translate(-28px, -3px);
   display: block;
 }
 .form:before {

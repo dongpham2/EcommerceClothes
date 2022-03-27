@@ -127,6 +127,10 @@ body {
 .header-user-icon {
   padding: 18px 2px;
 }
+.header-user-icon h5{
+  cursor: pointer;
+}
+
 .header-user {
   position: relative;
   top: -10px;
@@ -154,8 +158,8 @@ body {
   transition: .2s;
 }
 .form.active-form {
-    transform: translate(-100px, -11px) ;
-    display: block;
+  transform: translate(-36px, -2px);
+  display: block;
 }
 .form:before {
   content: "";

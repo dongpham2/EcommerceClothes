@@ -117,8 +117,6 @@ body {
 }
 .header-user-icon {
   padding: 5px;
-    border-radius: 50%;
-    background-color: #fff;
 }
 .header-user {
   position: relative;
@@ -151,7 +149,7 @@ body {
   transition: .3s ease-in-out;
 }
 .form.active-form {
-  transform: translate(-100px, 11px) ;
+  transform: translate(-36px, 2px);
   display: block;
 
 }
@@ -197,7 +195,7 @@ body {
 
 /* banner */
 .cart-banner {
-  margin-top: 20px;
+  margin-top: 48px;
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
