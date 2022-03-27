@@ -12,20 +12,19 @@
 </head>
 
 <body>
-
   <div class="cont">
     <div class="form sign-in">
-      <h2>Đăng Nhập</h2>
+      <h2 class="signin">Đăng Nhập</h2>
       <label>
-        <span>Tên đăng nhập</span>
+        <span class="username-name">Tên đăng nhập</span>
         <input type="text" name="username" id="login-username">
       </label>
       <label>
-        <span>Mật Khẩu</span>
+        <span class="password-pw">Mật Khẩu</span>
         <input type="password" name="password" id="login-password">
         <ion-icon class="eye-pw" name="eye-off-outline"></ion-icon>
       </label>
-      <button class="submit" type="button" id="btn-login">Đăng nhập</button>
+      <button class="submit" type="button" id="btn-login" onclick="sendLogin()">Đăng nhập</button>
       <a href="/user/forgot.html" style="text-decoration: none;">
         <p class="forgot-pass">Quên mật khẩu ?</p>
       </a>
@@ -35,7 +34,7 @@
         </ul>
       </div>
     </div>
-
+  
     <div class="sub-cont">
       <div class="img">
         <div class="img-text m-up">
@@ -54,34 +53,40 @@
       <div class="form sign-up">
         <h2>Đăng Ký</h2>
         <label>
-          <span>Tên ngườI dùng</span>
+          <span class="sign-up-name">Tên ngườI dùng</span>
+          <span class="toast toast-name hide">(*Tên người dùng phải > 6 ký tự)</span>
           <input type="text" class="fullname">
         </label>
         <label>
-          <span>Số điện thoại</span>
+          <span class="sign-up-phone">Số điện thoại</span>
+          <span class="toast toast-phone hide">(*Số điện thoại không hợp lệ)</span>
           <input type="phone" class="phone">
         </label>
         <label>
-          <span>Email</span>
-          <input type="email" class="email">
+          <span class="sign-up-email">Email</span>
+          <span class="toast toast-email hide">(*email phải có @)</span>
+          <input type="email" class="one email">
         </label>
         <label>
-          <span>Tên đăng nhập</span>
+          <span class="sign-up-username">Tên đăng nhập</span>
           <input type="text" class="username">
         </label>
         <label>
-          <span>Mật khẩu</span>
+          <span class="sign-up-password">Mật khẩu</span>
+          <span class="toast toast-password hide">(*Mật khẩu phải > 6 ký tự)</span>
           <input type="password" class="password">
         </label>
         <label>
-          <span>Nhập Lại Mật khẩu</span>
+          <span class="sign-up-cfPassword">Nhập Lại Mật khẩu</span>
+          <span class="toast toast-cf hide">(*Mật khẩu không trùng khớp)</span>
           <input type="password" class="confirm-password">
         </label>
-
-        <button type="button" class="submit" id="btn-register">Đăng ký ngay</button>
+  
+        <button type="button" class="submit" id="btn-register" onclick="sendSignup()">Đăng ký ngay</button>
       </div>
     </div>
   </div>
+  <script src="test.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 
   <script src="./../javascript/api.js"></script>

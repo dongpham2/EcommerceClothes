@@ -54,7 +54,7 @@ renderPaginationPage();
 const productsElement = document.querySelector('.product__bottom');
 
 let currentPage = 0;
-const SIZE = 20;
+const SIZE = 5;
 
 let products = [];
 (async () => {
@@ -74,6 +74,7 @@ async function renderProduct(products) {
   // 1 => 20 - 39  => SIZE- SIZE * 2-1
   // 2 => 40 - 49  => SIZE * 2 - SIZE * 3-1
   // 3 => 50 - 79  => SIZE * 3  - SIZE * 4-1
+  console.log('products', products);
   const data_render = products.slice(
     currentPage * SIZE,
     (currentPage + 1) * SIZE
@@ -149,8 +150,7 @@ const btnNext = document.querySelector('.btn-next');
 const btnPrev = document.querySelector('.btn-prev');
 
 btnNext.addEventListener('click', (totalPages) => {
-  console.log(totalPages);
-  currentPage++;
+  // currentPage++;
   // if (currentPage > totalPages) {
   //   btnNext.attr('disabled', 'disabled');
   // }
@@ -159,7 +159,9 @@ btnNext.addEventListener('click', (totalPages) => {
   // }
   // $('.btn-prev').removeClass('btn-active');
   // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+  //   'active'
+  // );
   renderProduct(products);
 });
 
@@ -172,7 +174,40 @@ btnPrev.addEventListener('click', () => {
   //   $('.btn-prev').addClass('btn-active');
   // }
   // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass('active');
+  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+  //   'active'
+  // );
   // $('.btn-next').removeClass('btn-active');
+  renderProduct(products);
+});
+
+const API = 'https://api-start-deploy.herokuapp.com/users';
+var userIcon = document.querySelector('.header-user-icon');
+fetch(API)
+  .then((response) => response.json())
+  .then((data) => {
+    data.map((users) => {
+      return users;
+    });
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+
+const checkBoxShirt = document.querySelector('.checkbox-ao');
+const checkBoxPants = document.querySelector('.checkbox-quan');
+
+checkBoxShirt.addEventListener('click', () => {
+  if (checkBoxShirt.checked) {
+    renderProduct(products.filter((product) => product.type === 'ao'));
+    return;
+  }
+  renderProduct(products);
+});
+checkBoxPants.addEventListener('click', () => {
+  if (checkBoxPants.checked) {
+    renderProduct(products.filter((product) => product.type === 'quan'));
+    return;
+  }
   renderProduct(products);
 });

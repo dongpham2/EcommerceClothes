@@ -1,387 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/cart.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <title>Cart Page</title>
-</head>
-<body>
-    <header class="header">
-        <div class="header__title container">
-          <div class="header__title-content">
-              <div class="header-content-top">
-                  <a href="main.html"><img src="/images/logo.png" alt="" /></a>
-                  <div class="header-page">
-                      Giỏ hàng
-                  </div>  
-              </div>
-            <div class="header-search">
-              <input
-                type="text"
-                placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI"
-              />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="header-user">
-              <div class="header-user-icon">
-                <i class="fa-solid fa-user btn-icon"></i>
-              </div>
-              <div class="form">
-                <a href="profileUser.html" style="color: black">
-                  <div class="com-form info">
-                    Thông tin cá nhân
-                  </div>
-                </a>
-                <a href="/user/login.html" style="color: black">
-                  <div class="com-form logout">
-                    <ion-icon name="log-out-outline"></ion-icon>
-                    <span>Đăng xuất</span>
-                  </div></a>
-              </div>
-            </div>
-            
-        </div>
-      </header>
 
-      <!-- cart banner -->
-      <div class="cart-banner">
-        <div class="cart-banner-img">
-          <img src="/images/sale.jpg" alt="">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title>Cart Page</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__title container">
+      <div class="header__title-content">
+        <div class="header-content-top">
+          <a href="main.html"><img src="/images/logo.png" alt="" /></a>
+          <div class="header-page">
+            Giỏ hàng
+          </div>
+        </div>
+        <div class="header-search">
+          <input type="text" placeholder="FlexinS - THỜI TRANG CHO NAM GIỚI" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="header-user">
+          <div class="header-user-icon">
+            <!-- <i class="fa-solid fa-user btn-icon"></i> -->
+            <h5>Dong dep trai</h5>
+          </div>
+          <div class="form active ">
+            <a href="profileUser.html" style="color: black">
+              <div class="com-form info">
+                Thông tin cá nhân
+              </div>
+            </a>
+            <a href="/user/login.html" style="color: black">
+              <div class="com-form logout">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <span>Đăng xuất</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+  </header>
+
+  <!-- cart banner -->
+  <div class="cart-banner">
+    <div class="cart-banner-img">
+      <img src="/images/sale.jpg" alt="">
+    </div>
+  </div>
+  <!-- cart item -->
+  <div class="container cart-container-top">
+    <div class="cart-check">
+      <input type="checkbox" name="btn" id="checkAll" />
+    </div>
+    <div class="cart-product">
+      Sản phẩm
+    </div>
+    <div class="cart-price">
+      Đơn giá
+    </div>
+    <div class="cart-number">
+      Số lượng
+    </div>
+    <div class="cart-money">
+      Số tiền
+    </div>
+  </div>
+  <div class="container cart-top">
+    <div class="content-cart-container">
+      <div class="cart-container-mid">
+        <div class="cart-check">
+          <input type="checkbox" name="btn">
+        </div>
+        <div class="cart-product cart-mid-img">
+          <a href="productDetail.html"><img src="/images/ao1.jpg" alt="" class="product-image "></a>
+          <div class="cart-title">
+            <h4 class="product-title">Áo nam siêu đẹp</h4>
+            <div class="cart-color">
+              Màu sắc:
+            </div>
+            <div class="cart-size product-size">
+              Kích cỡ:
+            </div>
+          </div>
+
+        </div>
+        <div class="art-price cart-mid-price product-price">
+          ₫ 90.000
+        </div>
+        <div class="cart-number cart-mid-number">
+          <div class="buttons_added">
+            <input class="minus is-form" type="button" value="-" />
+            <input aria-label="quantity" class="input-qty" max="1000" min="1" name="" type="number" value="1" />
+            <input class="plus is-form" type="button" value="+" />
+          </div>
+        </div>
+        <div class="cart-mid-money product-total-price">
+          ₫ 90.000
         </div>
       </div>
-      <!-- cart item -->
-      <div class="container cart-container-top">
-        <div class="cart-check">
-          <input type="checkbox" name="btn" id="checkAll"/>
+    </div>
+    <div class="container cart-bot-container">
+      <div class="cart-bot-voucher">
+        <ion-icon name="bookmarks-outline"></ion-icon>
+        <div class="cart-voucher-title">
+          Shop Voucher giảm đến ₫30k
         </div>
-        <div class="cart-product">
-            Sản phẩm
-        </div>
-        <div class="cart-price">
-            Đơn giá
-        </div>
-        <div class="cart-number">
-            Số lượng
-        </div>
-        <div class="cart-money">
-          Số tiền
-        </div>
+      </div>
+    </div>
   </div>
-      <div class="container cart-top"> 
-        <div class="content-cart-container">
-          <div class="cart-container-mid">
-            <div class="cart-check">
-                <input type="checkbox" name="btn">
+  <div class="container cart-buy">
+    <div class="cart-delete-container">
+      <button id="btn-delete">Xóa hàng</button>
+    </div>
+    <div class="cart-buy-container">
+      <a href="bill.html"><button class="" btn third>Mua hàng</button></a>
+    </div>
+  </div>
+  <!-- bound -->
+  <div class="container middle-content">
+    Có thể bạn cũng thích
+  </div>
+  <!-- cart items -->
+  <div class="bound slide-container">
+    <div class="slide-sliders">
+      <!-- <div class="slide-content">
+              <a href=""><img src="/images/ao1.jpg" alt=""></a>
+              <div class="slide-name">
+                <h4>Áo thun nam siêu xinh đẹp</h4>
               </div>
-            <div class="cart-product cart-mid-img">
-                <a href="productDetail.html"><img src="/images/ao1.jpg" alt=""></a>
-                <div class="cart-title">
-                    <h4>Áo nam siêu đẹp</h4>
-                    <div class="cart-color">
-                      Màu sắc: 
-                    </div>
-                    <div class="cart-size">
-                      Kích cỡ:
-                    </div>
+              <div class="slide-detail">
+                <div class="slide-detail-price">
+                  ₫90.000
                 </div>
-                
-            </div>
-            <div class="art-price cart-mid-price">
-                ₫ 90.000
-            </div>
-            <div class="cart-number cart-mid-number">
-              <div class="buttons_added">
-                <input class="minus is-form" type="button" value="-" />
-                <input
-                  aria-label="quantity"
-                  class="input-qty"
-                  max="1000"
-                  min="1"
-                  name=""
-                  type="number"
-                  value="1"
-                />
-                <input class="plus is-form" type="button" value="+" />
+                <div class="slide-detail-sale">
+                  Đã bán 20
+                </div>
               </div>
-            </div>
-            <div class="cart-mid-money">
-                ₫ 90.000
-            </div>
-          </div>  
+            </div> -->
+    </div>
+    <div class="content__bottom">
+      <div class="content-number">
+        <button>
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer id="footer">
+    <div class="layout-cover">
+      <div class="layout">
+        <div class="layout-item">
+          <image src="/images/logo.png" class="logo-img"></image>
         </div>
-        <div class="container cart-bot-container">
-          <div class="cart-bot-voucher">
-            <ion-icon name="bookmarks-outline"></ion-icon>
-            <div class="cart-voucher-title">
-              Shop Voucher giảm đến ₫30k
-            </div>
+        <div class="layout-item">
+          <h3>SẢN PHẨM</h3>
+          <div class="col-2">
+            <a href="#" class="ao-1">ÁO</a>
+            <a href="#">QUẦN</a>
+            <a href="#">SẢN PHẨM MỚI</a>
+            <a href="#">GIÀY</a>
+            <a href="#">PHỤ KIỆN</a>
+          </div>
+
+        </div>
+        <div class="layout-item">
+          <h3>MENU</h3>
+          <div class="col-3">
+            <a href="#">THÔNG TIN</a>
+            <a href="#">LIÊN HỆ</a>
+            <a href="#">TÀI KHOẢN CỦA TÔI</a>
+            <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
+            <a href="#">ĐĂNG NHẬP</a>
           </div>
         </div>
-        </div>
-        <div class="container cart-buy">
-          <div class="cart-delete-container">
-            <button id="btn-delete">Xóa hàng</button>
-          </div>
-          <div class="cart-buy-container">
-            <a href="bill.html"><button class=""btn third>Mua hàng</button></a>
-          </div>
-        </div>
-        <!-- bound -->
-        <div class="container middle-content">
-          Có thể bạn cũng thích
-        </div>
-        <!-- cart items -->
-        <div class="bound slide-container">
-          <div class="slide-sliders">
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-            <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div>
-           </div>
-           <div class="content__bottom">
-            <div class="content-number">
-              <button><ion-icon name="chevron-back-outline"></ion-icon></button>
-              <button>1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>4</button>
-              <button>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </button>
-            </div>
+        <div class="layout-item">
+          <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+          <div class="col-4">
+            <h4>ĐỊA CHỈ</h4>
+            <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
+            <h4>ĐIỆN THOẠI</h4>
+            <span>0123456789</span>
+            <h4>EMAIL</h4>
+            <span>DONGPHAM21082001@GMAIL.COM</span>
+            <h4>NGÀY/GIỜ LÀM VIỆC</h4>
+            <span>TỪ T2-CN/7:00AM - 8:00PM</span>
           </div>
         </div>
-    <!-- footer -->
-    <footer id="footer">
-      <div class="layout-cover">
-        <div class="layout">
-            <div class="layout-item">
-                <image src="/images/logo.png" class="logo-img"></image>
-            </div>
-            <div class="layout-item">
-                <h3>SẢN PHẨM</h3>
-                <div class="col-2">
-                  <a href="#" class="ao-1">ÁO</a>
-                  <a href="#">QUẦN</a>
-                  <a href="#">SẢN PHẨM MỚI</a>
-                  <a href="#">GIÀY</a>
-                  <a href="#">PHỤ KIỆN</a>
-                </div>
-                
-            </div>
-            <div class="layout-item">
-                <h3>MENU</h3>
-                <div class="col-3">
-                  <a href="#">THÔNG TIN</a>
-                  <a href="#">LIÊN HỆ</a>
-                  <a href="#">TÀI KHOẢN CỦA TÔI</a>
-                  <a href="#">LỊCH SỬ ĐĂNG NHẬP</a>
-                  <a href="#">ĐĂNG NHẬP</a>
-              </div>
-            </div>
-            <div class="layout-item">
-                <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
-                <div class="col-4">
-                  <h4>ĐỊA CHỈ</h4>
-                  <span>349 LÊ DUẨN, ĐÔNG HÀ, QUẢNG TRỊ</span>
-                  <h4>ĐIỆN THOẠI</h4>
-                  <span>0123456789</span>
-                  <h4>EMAIL</h4>
-                  <span>DONGPHAM21082001@GMAIL.COM</span>
-                  <h4>NGÀY/GIỜ LÀM VIỆC</h4>
-                  <span>TỪ T2-CN/7:00AM - 8:00PM</span>
-                </div>
-            </div>
-            
-        </div>
+
+      </div>
     </div>
   </footer>
-  
-    <script src="/javascript/cart.js"></script> 
-    
-    <script src="/javascript/main.js"></script>
+
+  <script src="/javascript/cart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
+
+  <script src="./../javascript/api.js"></script>
 </body>
+
 </html>

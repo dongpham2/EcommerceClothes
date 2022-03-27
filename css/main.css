@@ -137,7 +137,22 @@ body {
   right: 30px;
 }
 .header-user-icon {
+  cursor: pointer;
+  display: flex;
   padding: 18px 2px;
+}
+.header-user-icon h5 {
+  font-weight: 500;
+  width: 129px;
+  font-weight: 300;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 20px;
 }
 .header-user {
   position: relative;
@@ -173,7 +188,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 .form.active-form {
-  transform: translate(-100px, -11px);
+  transform: translate(-28px, -3px);
   display: block;
 }
 .form:before {

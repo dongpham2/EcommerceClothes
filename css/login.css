@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   background: -webkit-linear-gradient(left, #7579ff, #b224ef);
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 input,
@@ -54,7 +54,7 @@ h2 {
 label {
   display: block;
   width: 260px;
-  margin: 15px auto 0;
+  margin: 2px auto 0;
   text-align: center;
 }
 
@@ -68,12 +68,13 @@ label span {
 input {
   display: block;
   width: 100%;
-  margin-top: 5px;
+  margin-top: -6px;
   font-size: 16px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   border-bottom: 1px solid rgba(109, 93, 93, 0.4);
   text-align: center;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 26px;
 }
 
 button {
@@ -92,11 +93,11 @@ button {
   position: absolute;
 }
 .submit {
-  margin-top: 40px;
+  margin-top: 4px;
   margin-bottom: 30px;
   text-transform: uppercase;
   font-weight: 600;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   background: -webkit-linear-gradient(left, #7579ff, #b224ef);
 }
 
@@ -169,7 +170,7 @@ button {
 }
 
 .img:before {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -182,7 +183,7 @@ button {
 }
 
 .img:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -265,7 +266,7 @@ button {
 }
 
 .img-btn:after {
-  content: '';
+  content: "";
   z-index: 2;
   position: absolute;
   left: 0;
@@ -319,7 +320,34 @@ button {
 }
 .eye-pw {
   position: relative;
-  transform: translate(119px, -23px);
+  transform: translate(119px, -48px);
   cursor: pointer;
-  color:  black;
+  color: black;
+}
+.toast-name {
+  transform: translate(-158px, 53px);
+}
+.toast-phone {
+  transform: translate(-137px, 53px);
+}
+.toast-email {
+  transform: translate(-78px, 53px);
+}
+.toast-password {
+  transform: translate(-120px, 53px);
+}
+.toast-cf {
+  transform: translate(-165px, 55px);
+}
+.toast {
+  text-transform: lowercase;
+  position: absolute;
+  color: red;
+  display: inline-block;
+}
+.hide {
+  display: none;
+}
+.signin {
+  margin-bottom: 20px;
 }
