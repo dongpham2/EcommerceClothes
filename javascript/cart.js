@@ -40,51 +40,6 @@ $('#btn-delete').click(function () {
   });
 });
 
-const products_API = 'https://api-start-deploy.herokuapp.com/items';
-
-fetch(products_API)
-  .then((response) => response.json())
-  .then((result) => {
-    console.log('Success:', result);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
-
-function start() {
-  // getProducts(renderProducts)
-}
-start();
-
-function getProducts(callback) {
-  fetch(products_API)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(callback);
-}
-function renderProducts(products) {
-  var listProducts = document.querySelector('.slide-sliders');
-  var htmls = products.map(function (product) {
-    return `
-    <div class="slide-content">
-      <a href=""><img src="${product.image}" alt=""></a>
-        <div class="slide-name">
-          <h4>${product.name}</h4>
-        </div>
-        <div class="slide-detail">
-          <div class="slide-detail-price">
-            ${product.price}₫
-          </div>
-          <div class="slide-detail-sale">
-            Đã bán:
-          </div>
-        </div>
-    </div>
-    `;
-  });
-  listProducts.innerHTML = htmls.join('');
-}
 
 const cartData = JSON.parse(localStorage.getItem('cart'));
 const productTitle = document.querySelector('.product-title');
@@ -98,3 +53,136 @@ productTitle.innerHTML = cartData.name;
 productSize.innerHTML = cartData.size;
 productPrice.innerHTML = cartData.price;
 productImage.src = cartData.image;
+
+// render :ListPage
+const listPage = document.querySelector('.content-number-page');
+function renderPaginationPage(totalPages) {
+  let html = '';
+  for (let i = 1; i <= totalPages; i++) {
+    html += `
+      <button class="btn-number" id=${i}>${i}</button>
+    `;
+  }
+  listPage.innerHTML = html;
+}
+renderPaginationPage();
+
+//renderproduct
+const productsElement = document.querySelector('.product__bottom');
+
+let currentPage = 0;
+const SIZE = 12;
+
+let products = [];
+(async () => {
+  try {
+    products = await axiosClient.get('/items');
+    renderProduct(products);
+    renderPaginationPage(Math.ceil(products.length / SIZE));
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
+async function renderProduct(products) {
+  console.log('products', products);
+  const data_render = products.slice(
+    currentPage * SIZE,
+    (currentPage + 1) * SIZE
+  );
+  productsElement.innerHTML = '';
+  for (let i = 0; i < data_render.length; i++) {
+    const divElement = document.createElement('div');
+    divElement.setAttribute('class', 'product-item');
+    divElement.setAttribute('id', products[i]._id);
+    divElement.innerHTML = `
+    <div class="product-item-name">
+    <a ><img src="${products[i].image}" alt="" /></a>
+      <h4>
+        ${products[i].name}
+      </h4>
+      <div class="product-item-price">
+        <div class="price-item-cost">
+          <div class="product-price-start">${products[i].price} ₫</div>
+          
+        </div>
+        <div class="product-item-star">
+          <div class="product-item-sale">Đã bán: 0</div>
+        </div>
+      </div>
+      <div class="product-item-produce">TP. Đà Nẵng</div>
+    </div>
+    `;
+    productsElement.appendChild(divElement);
+    try {
+      console.log('run it', `#${products[i]._id}`);
+      const productItemsElement = document.getElementById(`${products[i]._id}`);
+      console.log(productItemsElement);
+      productItemsElement.addEventListener('click', () => {
+        localStorage.setItem('detail-product', JSON.stringify(products[i]));
+        window.location.href = './productDetail.html';
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+// Pagination
+function changePage(totalPages) {
+  const currentPages = document.querySelectorAll('.content-number-page');
+  for (let i = 0; i < currentPages.length; i++) {
+    currentPages[i].addEventListener('click', () => {
+      let value = i + 1;
+      currentPage = value;
+      $('.content-number-page .btn-number').removeClass('active');
+      currentPages[i].classList.add('active');
+      if (currentPage > 1 && currentPage < products.length) {
+        $('.btn-prev').removeClass('btn-active');
+        $('.btn-next').removeClass('btn-active');
+      }
+      if (currentPage === 1) {
+        $('.btn-prev').removeClass('btn-active');
+      }
+      if (currentPage === totalPages) {
+        $('.btn-next').addClass('btn-active');
+      }
+      renderProduct(products);
+    });
+  }
+}
+changePage();
+
+const btnNext = document.querySelector('.btn-next');
+const btnPrev = document.querySelector('.btn-prev');
+
+btnNext.addEventListener('click', (totalPages) => {
+  currentPage++;
+  if (currentPage > totalPages) {
+    btnNext.attr('disabled', 'disabled');
+  }
+  if (currentPage === totalPages) {
+    $('.btn-next').addClass('active');
+  }
+  $('.btn-prev').removeClass('btn-active');
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
+  renderProduct(products);
+});
+
+btnPrev.addEventListener('click', () => {
+  currentPage--;
+  if (currentPage <= 1) {
+    currentPage = 1;
+  }
+  if (currentPage === 1) {
+    $('.btn-prev').addClass('btn-active');
+  }
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
+  $('.btn-next').removeClass('btn-active');
+  renderProduct(products);
+});

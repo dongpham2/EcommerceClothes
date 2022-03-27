@@ -54,7 +54,7 @@ renderPaginationPage();
 const productsElement = document.querySelector('.product__bottom');
 
 let currentPage = 0;
-const SIZE = 5;
+const SIZE = 20;
 
 let products = [];
 (async () => {
@@ -101,7 +101,7 @@ async function renderProduct(products) {
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
-          <div class="product-item-sale">Đã bán:</div>
+          <div class="product-item-sale">Đã bán: 0</div>
         </div>
       </div>
       <div class="product-item-produce">TP. Đà Nẵng</div>
@@ -150,49 +150,37 @@ const btnNext = document.querySelector('.btn-next');
 const btnPrev = document.querySelector('.btn-prev');
 
 btnNext.addEventListener('click', (totalPages) => {
-  // currentPage++;
-  // if (currentPage > totalPages) {
-  //   btnNext.attr('disabled', 'disabled');
-  // }
-  // if (currentPage === totalPages) {
-  //   $('.btn-next').addClass('active');
-  // }
-  // $('.btn-prev').removeClass('btn-active');
-  // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
-  //   'active'
-  // );
+  currentPage++;
+  if (currentPage > totalPages) {
+    btnNext.attr('disabled', 'disabled');
+  }
+  if (currentPage === totalPages) {
+    $('.btn-next').addClass('active');
+  }
+  $('.btn-prev').removeClass('btn-active');
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
   renderProduct(products);
 });
 
 btnPrev.addEventListener('click', () => {
   currentPage--;
-  // if (currentPage <= 1) {
-  //   currentPage = 1;
-  // }
-  // if (currentPage === 1) {
-  //   $('.btn-prev').addClass('btn-active');
-  // }
-  // $('.content-number-page .btn-number').removeClass('active');
-  // $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
-  //   'active'
-  // );
-  // $('.btn-next').removeClass('btn-active');
+  if (currentPage <= 1) {
+    currentPage = 1;
+  }
+  if (currentPage === 1) {
+    $('.btn-prev').addClass('btn-active');
+  }
+  $('.content-number-page .btn-number').removeClass('active');
+  $(`.content-number-page .btn-number:eq(${currentPage})`).addClass(
+    'active'
+  );
+  $('.btn-next').removeClass('btn-active');
   renderProduct(products);
 });
 
-const API = 'https://api-start-deploy.herokuapp.com/users';
-var userIcon = document.querySelector('.header-user-icon');
-fetch(API)
-  .then((response) => response.json())
-  .then((data) => {
-    data.map((users) => {
-      return users;
-    });
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
 
 const checkBoxShirt = document.querySelector('.checkbox-ao');
 const checkBoxPants = document.querySelector('.checkbox-quan');

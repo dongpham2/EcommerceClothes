@@ -29,7 +29,6 @@ btn_login.addEventListener("click", async function () {
       window.location.href = "./main.html";
     }
   } catch (error) {
-    sendSignup();
     alert("Tài khoản hoặc mật khẩu của bạn không chính xác 😥😥😥")
   }
 });
@@ -56,9 +55,9 @@ btn_register.addEventListener("click", async function () {
       alert("Chúc mừng bạn đã đăng ký thành công 🤗🤗🤗")
       localStorage.setItem(fullname, fullNameRegister)
     }
-  } catch (error) {
-    sendSignup();
-    alert("Đăng ký thất bại, vui lòng nhập đầy đủ thông tin!!! 🤔🤔🤔");
+  }catch (error) {
+    // sendSignup();
+    // alert("Đăng ký thất bại, vui lòng nhập đầy đủ thông tin!!! 🤔🤔🤔");
   }
 });
 
@@ -88,14 +87,6 @@ function sendLogin() {
   } else {
     passwordLogin.style.color = "#505f75";
   }
-  // if (nameValue.value == "" && passValue.value == "") {
-  //   alert("Vui lòng nhập tài khoản và mật khẩu");
-  //   usernameLogin.style.color = "red";
-  //   passwordLogin.style.color = "red";
-  // } else {
-  //   usernameLogin.style.color = "#505f75";
-  //   passwordLogin.style.color = "#505f75";
-  // }
   
 }
 

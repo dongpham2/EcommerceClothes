@@ -110,7 +110,11 @@
         <div class="cart-mid-money product-total-price">
           ₫ 90.000
         </div>
+        <div class="cart-delete-container">
+          <button id="btn-delete">Xóa hàng</button>
+        </div>
       </div>
+      
     </div>
     <div class="container cart-bot-container">
       <div class="cart-bot-voucher">
@@ -122,9 +126,6 @@
     </div>
   </div>
   <div class="container cart-buy">
-    <div class="cart-delete-container">
-      <button id="btn-delete">Xóa hàng</button>
-    </div>
     <div class="cart-buy-container">
       <a href="bill.html"><button class="" btn third>Mua hàng</button></a>
     </div>
@@ -135,32 +136,19 @@
   </div>
   <!-- cart items -->
   <div class="bound slide-container">
-    <div class="slide-sliders">
-      <!-- <div class="slide-content">
-              <a href=""><img src="/images/ao1.jpg" alt=""></a>
-              <div class="slide-name">
-                <h4>Áo thun nam siêu xinh đẹp</h4>
-              </div>
-              <div class="slide-detail">
-                <div class="slide-detail-price">
-                  ₫90.000
-                </div>
-                <div class="slide-detail-sale">
-                  Đã bán 20
-                </div>
-              </div>
-            </div> -->
+    <div class="slide-sliders product__bottom">
+      <!-- render product -->
+           
     </div>
     <div class="content__bottom">
-      <div class="content-number">
-        <button>
+      <div class="content-number" style="display: flex;">
+        <button class="btn-prev btn-active">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>
+        <div class="content-number-page">
+          <!-- <button class="btn-number active">1</button> -->
+        </div>
+        <button class="btn-next">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </button>
       </div>
@@ -211,11 +199,11 @@
       </div>
     </div>
   </footer>
-
-  <script src="/javascript/cart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 
   <script src="./../javascript/api.js"></script>
+  <script src="/javascript/cart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"></script>
 </body>
 
 </html>
