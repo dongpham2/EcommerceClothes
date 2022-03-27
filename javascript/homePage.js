@@ -83,7 +83,7 @@ async function renderProduct(products) {
     productsElement.innerHTML += `
     <div class="product-items" id={${products[i]._id}}>
                <div class="product-item-name">
-               <a href="productDetail.html"><img src="${products[i].image}" alt="" /></a>
+               <a href="login.html"><img src="${products[i].image}" alt="" /></a>
                  <h4>
                    ${products[i].name}
                  </h4>

@@ -128,6 +128,21 @@ body {
 .header-user-icon {
   padding: 18px 2px;
 }
+.header-user-icon h5 {
+  margin-right: 50px;
+  font-weight: 500;
+  width: 129px;
+  font-weight: 300;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  font-size: 20px;
+  cursor: pointer;
+}
 .header-user {
   position: relative;
   top: -10px;
@@ -153,7 +168,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 .form.active-form {
-  transform: translate(-100px, -11px);
+  transform: translate(-37px, -3px);
   display: block;
 }
 .form:before {

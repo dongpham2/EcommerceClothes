@@ -1,6 +1,15 @@
 var deleteCart = document.querySelector("#btn-delete")
 var product = document.querySelector(".content-cart-container");
 
+var user = document.querySelector(".header-user-icon");
+var form = document.querySelector(".form");
+user.addEventListener("click", function () {
+  form.classList.toggle("active-form");
+});
+
+window.onscroll = () => {
+  form.classList.remove("active-form");
+};
 // Function plus and sub number
 $("input.input-qty").each(function () {
   var $this = $(this),
