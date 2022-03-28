@@ -1,3 +1,4 @@
+
 function addColor(){
     var html = 
     '<div class="col-color" id="subgr-1-0">'+
@@ -26,6 +27,8 @@ function addSize(){
 function removeSize(){
   var parent = document.getElementById("gr-2");
   var child = document.getElementById("subgr-2");
+  // let toRemove = document.querySelector("#subgr-2");
+  // toRemove.remove();
   parent.removeChild(child);
 }
 function removeColor(){ 

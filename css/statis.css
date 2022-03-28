@@ -268,3 +268,21 @@ body {
   border-radius: 10px;
   background-color: rgba(240, 227, 222, 1); 
 }
+#lineChart-1{
+  display: none;
+}
+.months-1{
+  display: flex;
+}
+.months-1 h5{
+  margin-right: 12px;
+}
+.act{
+  border: 1px solid var(--price-color);
+  border-radius: 10px;
+  padding: 5px;
+}
+#months{
+  height: 40px;
+  display: none;
+}

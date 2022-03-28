@@ -284,7 +284,7 @@ body {
   width: 158px;
   height: 240px;
 }
-.btn-delete{
+.btn-edit{
   width: 100%;
   margin-top: 0px;
   padding: 5px;
@@ -294,11 +294,14 @@ body {
   border: 1px solid #57E2EB;
   box-sizing: border-box;
 }
+.btn-edit:hover{
+  border: 1px solid var(--price-color);
+}
 .btn-delete:hover{
   background-color: #57e2eb;
 }
 .item-name{
-  cursor: pointer;
+  /* cursor: pointer; */
   padding: 10px 0px 10px 0px;
 }
 .item-price{

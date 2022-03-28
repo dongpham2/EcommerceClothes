@@ -20,7 +20,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
-    <title>Document</title>
+    <title>Thống kê doanh thu</title>
 </head>
 <body>
     <header class="header">
@@ -78,18 +78,37 @@
           </div>
           <div class="charts">
                 <div class="chart">
-                    <h2>Doanh thu (theo tháng)</h2>
+                    <h2 onclick="statisMonth()">Doanh thu (theo tháng)</h2>
                     <canvas id="lineChart"></canvas>
+                    <canvas id="lineChart-1"></canvas>
                 </div>
                 <div class="chart doughnut-chart">
-                    <h3 id="">Tổng thu nhập tháng qua:</h3>
+                  <div id="months" >
+                    <div class="months-1"> 
+                      <h5 id="m1" onclick="selectMonth()" class="act">Tháng 1</h5>
+                      <h5 id="m2" onclick="selectMonth()" >Tháng 2</h5>
+                      <h5 id="m3" onclick="selectMonth()" >Tháng 3</h5>
+                      <h5 id="m4">Tháng 4</h5>
+                      <h5 id="m5">Tháng 5</h5>
+                      <h5 id="m6">Tháng 6</h5>
+                      <h5 id="m7">Tháng 7</h5>
+                      <h5 id="m8">Tháng 8</h5>
+                      <h5 id="m9">Tháng 9</h5>
+                      <h5 id="m10">Tháng 10</h5>
+                      <h5 id="m11">Tháng 11</h5>
+                      <h5 id="m12">Tháng 12</h5>
+                    </div>
+                  </div>
+                    <h3 id="income-1">Tổng thu nhập tháng qua:</h3>
                     <br>
                     <h3 id="">Số sản phẩm đã bán:</h3>
                 </div>
           </div>
           <div class="charts-content">
-            <h4>Doanh thu (theo tuần)</h4>
+            <h4 onclick="statisWeek()">Doanh thu (theo tuần)</h4>
+            
           </div>
+          
       </div>
       <script src="/javascript/profileUser.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
