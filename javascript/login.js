@@ -26,10 +26,16 @@ btn_login.addEventListener("click", async function () {
       password: passwordLogin.value,
     });
     if (res.success) {
-      window.location.href = "./main.html";
+      window.localStorage.setItem("fullname", res.username);
+      window.localStorage.setItem("address", res.address);
+      window.localStorage.setItem("phone", res.phone);
+      window.localStorage.setItem("email", res.email);
+      window.localStorage.setItem("userID", res.userID);
+       window.location.href = "./main.html";
     }
   } catch (error) {
-    alert("Tài khoản hoặc mật khẩu của bạn không chính xác 😥😥😥")
+    alert(error)
+    alert("Tài khoản hoặc mật khẩu của bạn không chính xác 😥😥😥");
   }
 });
 
