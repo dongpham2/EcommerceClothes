@@ -46,13 +46,14 @@ const productTitle = document.querySelector('.product-title');
 const productSize = document.querySelector('.product-size');
 const productPrice = document.querySelector('.product-price');
 const productImage = document.querySelector('.product-image');
+const productColor = document.querySelector('.product-color')
 
 // set value
-
 productTitle.innerHTML = cartData.name;
 productSize.innerHTML = cartData.size;
 productPrice.innerHTML = cartData.price;
 productImage.src = cartData.image;
+productColor.innerHTML = cartData.color;
 
 // render :ListPage
 const listPage = document.querySelector('.content-number-page');

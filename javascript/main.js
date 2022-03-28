@@ -54,7 +54,7 @@ renderPaginationPage();
 const productsElement = document.querySelector('.product__bottom');
 
 let currentPage = 0;
-const SIZE = 20;
+const SIZE = 10;
 
 let products = [];
 (async () => {
@@ -93,7 +93,6 @@ async function renderProduct(products) {
       <div class="product-item-price">
         <div class="price-item-cost">
           <div class="product-price-start">${products[i].price} ₫</div>
-          
         </div>
         <div class="product-item-star">
           <i class="fa-solid fa-star"></i>
@@ -150,6 +149,7 @@ const btnNext = document.querySelector('.btn-next');
 const btnPrev = document.querySelector('.btn-prev');
 
 btnNext.addEventListener('click', (totalPages) => {
+  console.log(totalPages);
   currentPage++;
   if (currentPage > totalPages) {
     btnNext.attr('disabled', 'disabled');

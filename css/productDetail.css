@@ -526,6 +526,9 @@ body {
 }
 .product-item-name {
   cursor: pointer;
+  margin-bottom: 5px;
+  margin-right: 5px;
+
 }
 
 .product-item-name h4 {

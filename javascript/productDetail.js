@@ -119,7 +119,6 @@ $('input.input-qty').each(function () {
 // get info of color
 
 const productData = JSON.parse(localStorage.getItem('detail-product'));
-console.log(productData);
 // init element
 const productTitle = document.querySelector('.product-title');
 const productPrice = document.querySelector('.product-price');
@@ -129,7 +128,9 @@ const productImagesDetail = document.querySelector('.product-images-detail');
 const productSize = document.querySelector('.product-size');
 const productQuantity = document.querySelector('.product-quantity');
 const btnAdd = document.querySelector('.btn-add');
+const colorBtn = document.querySelector('.content-button-color')
 const description = document.querySelector('.content-descript')
+const btnBuy = document.querySelector('.btn-sed')
 // set data
 productTitle.innerText = productData.name;
 productPrice.innerText = productData.price + ' ₫';
@@ -144,6 +145,11 @@ const imagesDom = productData.image_details.map(
 );
 productImagesDetail.innerHTML = imagesDom.join(' ');
 
+const colorDom = productData.color.map(
+  (item) => `<button class="btn-1">${item}</button>`
+);
+colorBtn.innerHTML = colorDom.join(' ');
+
 btnAdd.addEventListener('click', () => {
   const btnActive = document.querySelector('.btn-active');
   const id = btnActive?.getAttribute('id');
@@ -152,14 +158,29 @@ btnAdd.addEventListener('click', () => {
     name: productData.name,
     price: productData.price,
     image: productData.image,
+    color: productData.color,
     size: productData.size[id],
     quantity: productQuantity.value,
   };
   localStorage.setItem('cart', JSON.stringify(product));
-  // alert('Thêm vào giỏ hàng thành công');
-  window.location.href = '../../user/cart.html';
+  alert('Thêm vào giỏ hàng thành công');
+  // window.location.href = '../../user/cart.html';
 });
-
+btnBuy.addEventListener('click', () => {
+  const btnActive = document.querySelector('.btn-active');
+  const id = btnActive?.getAttribute('id');
+  const product = {
+    id: productData.id,
+    name: productData.name,
+    price: productData.price,
+    image: productData.image,
+    color: productData.color,
+    size: productData.size[id],
+    quantity: productQuantity.value,
+  };
+  localStorage.setItem('cart', JSON.stringify(product));
+  window.location.href = '../../user/bill.html';
+})
 
 // render :ListPage
 const listPage = document.querySelector('.content-number-page');

@@ -465,7 +465,7 @@ body {
   word-break: break-word;
 }
 .product-item-name img {
-  max-height: 244px;
+  height: 244px;
 }
 .price-item-cost {
   display: flex;
